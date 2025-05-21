@@ -2,6 +2,7 @@ import { InputField, Button } from "@/components";
 import { useActionCreators, useAppSelector } from "@/hooks";
 import { _exampleSetBar, _exampleSetFoo, type RootState } from "@/store";
 import type { InputOnChangeEvent } from "@/lib";
+import { setAppTheme } from "@/utils";
 
 const actionCreators = { _exampleSetBar, _exampleSetFoo };
 
@@ -16,6 +17,14 @@ export const HomePage: React.FC = () => {
 
   const inputReduxHandlerBar = (e: InputOnChangeEvent) => {
     _exampleSetBar(e.target.value);
+  };
+
+  const buttonHandlerLight = () => {
+    setAppTheme("light");
+  };
+
+  const buttonHandlerDark = () => {
+    setAppTheme("dark");
   };
 
   return (
@@ -36,7 +45,8 @@ export const HomePage: React.FC = () => {
         value={bar}
         onUpdate={inputReduxHandlerBar}
       />
-      <Button buttonText="Button" onClick={() => console.log("foobar")} />
+      <Button buttonText="Light Theme" onClick={buttonHandlerLight} />
+      <Button buttonText="Dark Theme" onClick={buttonHandlerDark} />
     </div>
   );
 };

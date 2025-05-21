@@ -1,13 +1,16 @@
 # React 19 Typescript Boilerplate
 
-This boilerplate was built to the specifications of Colin Birdwell the creator.
-Built with Vite
+This boilerplate was built to the specifications of Colin Birdwell (the creator).
 
-## Integrated libraries
+- React 19.1
+- Built with Vite using react-ts
+
+## Integrated Features
 
 - Redux
 - Redux Toolkit
 - React Router
+- SaSS
 
 ## Running Locally
 

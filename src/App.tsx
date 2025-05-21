@@ -2,14 +2,14 @@ import { Provider } from "react-redux";
 
 import { AppRoute } from "@/routes";
 import { store } from "@/store";
-//import './App.css'
+
+// Compiled style sheet from SaSS
+import "@/styles/_index.scss";
 
 export const App: React.FC = () => {
   return (
     <Provider store={store}>
-      <div className="app">
-        <AppRoute />
-      </div>
+      <AppRoute />
     </Provider>
   );
 };

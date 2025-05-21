@@ -1,17 +1,13 @@
 import { Navbar } from "@/components";
-import type { NavigationLinkProps } from "@/components/index.types";
-import { headerCLS, homePageURL, examplePageURL } from "@/constants";
 
-const linksArray: NavigationLinkProps[] = [
-  { target: homePageURL, targetText: "Home", type: "text" },
-  { target: examplePageURL, targetText: "Example", type: "text" },
-];
+import { linksArray } from "./utils";
+import type { HeaderProps } from "./index.types";
 
-export const Header: React.FC = () => {
+export const Header: React.FC<HeaderProps> = ({ className }) => {
   return (
-    <header className={headerCLS}>
+    <header className={className}>
       Header
-      <Navbar links={linksArray} />
+      <Navbar links={linksArray} className={className} />
     </header>
   );
 };

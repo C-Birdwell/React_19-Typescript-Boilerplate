@@ -1,5 +1,5 @@
-import { footerCLS } from "@/constants";
+import type { FooterProps } from "./index.types";
 
-export const Footer: React.FC = () => {
-  return <footer className={footerCLS}>Footer</footer>;
+export const Footer: React.FC<FooterProps> = ({ className }) => {
+  return <footer className={className}>Footer</footer>;
 };
