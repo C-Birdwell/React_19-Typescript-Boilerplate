@@ -29,8 +29,10 @@ export const HomePage: React.FC = () => {
 
   return (
     <div>
-      {foo} {bar}
       <h2>HomePage</h2>
+      <p>
+        {foo} {bar}
+      </p>
       <InputField
         name="foo-input"
         labelText="Foo"

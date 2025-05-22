@@ -1,0 +1,15 @@
+@use "../../abstracts/" as *;
+
+header.header {
+  grid-area: header;
+  position: fixed;
+  z-index: $z-header;
+  height: $height-header;
+  width: 100%;
+  top: 0px;
+  left: 0px;
+  background-color: var(--color-background-secondary);
+  border: 2px solid var(--color-accent-primary);
+  border-top-width: 0px;
+  border-radius: 0 0 $border-radius-dull $border-radius-dull;
+}

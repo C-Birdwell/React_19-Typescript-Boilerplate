@@ -1,0 +1,15 @@
+@use "../../abstracts/" as *;
+
+button.button {
+  -webkit-appearance: none;
+  appearance: none;
+  display: block;
+  height: 50px;
+  border-radius: $border-radius-dull;
+  cursor: pointer;
+  background-color: var(--color-accent-primary);
+  border: 2px solid var(--color-accent-secondary);
+  &:hover {
+    background-color: var(--color-accent-secondary);
+  }
+}

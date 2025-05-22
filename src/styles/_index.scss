@@ -1,2 +1,5 @@
-@use "./base";
-@use "./vendors";
+// Third party libraries
+@use "./vendors" as *;
+// App specific styles
+@use "./base" as *;
+@use "./components/" as *;
