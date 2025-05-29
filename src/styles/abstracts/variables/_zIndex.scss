@@ -1,5 +1,8 @@
 $z-floor: 0;
 $z-above: 1;
+$z-level-1: 100;
 
 $z-base: $z-floor + $z-above;
 $z-header: $z-base + $z-above;
+
+$z-modal: $z-level-1 + $z-floor;

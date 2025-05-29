@@ -1,0 +1,41 @@
+@use "../../abstracts/" as *;
+
+.backdrop {
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+
+  &--dark {
+    @include background-with-opacity($color-dark, $opacity-modal);
+  }
+  &--light {
+    @include background-with-opacity($color-light, $opacity-modal);
+  }
+  &--success {
+    @include background-with-opacity($color-success, $opacity-modal);
+  }
+  &--caution {
+    @include background-with-opacity($color-caution, $opacity-modal);
+  }
+  &--danger {
+    @include background-with-opacity($color-danger, $opacity-modal);
+  }
+
+  &--primary {
+    @include background-with-opacity($color-accent-1, $opacity-modal);
+  }
+
+  &--secondary {
+    @include background-with-opacity($color-accent-2, $opacity-modal);
+  }
+}
+
+[theme-mode="dark"] .backdrop {
+  &--primary {
+    @include background-with-opacity($color-accent-3, $opacity-modal);
+  }
+
+  &--secondary {
+    @include background-with-opacity($color-accent-4, $opacity-modal);
+  }
+}

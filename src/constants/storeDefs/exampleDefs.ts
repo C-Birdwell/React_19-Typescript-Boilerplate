@@ -1,1 +1,1 @@
-export const EXAMPLE = "example";
+export const EXAMPLE_DEF = "example";

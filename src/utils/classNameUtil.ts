@@ -1,13 +1,16 @@
 export const convertClassName = (currentName: string, newNames: string[]) => {
+  const newNamesFiltered = newNames.filter((name) => name !== "");
+
   const isNewNameNotValid = () => {
-    return newNames.filter((name) => name !== "").length > 0;
+    return newNamesFiltered.length > 0;
   };
 
   if (!isNewNameNotValid()) {
     return currentName;
   }
 
-  const mapNewNames = () => newNames.map((name) => ` ${currentName}--${name}`);
+  const mapNewNames = () =>
+    newNamesFiltered.map((name) => ` ${currentName}--${name}`);
 
   return `${currentName}${mapNewNames()}`;
 };
