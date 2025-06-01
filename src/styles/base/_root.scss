@@ -21,10 +21,13 @@ body,
 * {
   position: relative;
   box-sizing: border-box;
-  background-color: var(--color-background-primary);
   color: var(--color-text-primary);
   transition: background-color $speed-025 ease, color $speed-075 ease,
     border-color $speed-025;
+  font-family: $font-family;
+  font-optical-sizing: auto;
+  font-style: normal;
+  font-variation-settings: "wdth" 100;
 }
 
 #root.app {
@@ -35,4 +38,5 @@ body,
     "footer";
   min-height: 100vh;
   min-width: 100%;
+  background-color: var(--color-background-primary);
 }

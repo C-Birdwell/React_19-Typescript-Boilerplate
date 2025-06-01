@@ -1,3 +1,7 @@
+//Root First
+@forward "./root";
+// Override foundational styles
+@forward "./text";
 @forward "./layout";
 @forward "./main";
-@forward "./root";
+@forward "./images";

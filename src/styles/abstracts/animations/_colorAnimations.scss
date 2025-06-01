@@ -1,0 +1,48 @@
+@mixin animate($animation, $duration, $method, $times) {
+  animation: $animation $duration $method $times;
+}
+
+@mixin keyframes($name) {
+  @keyframes #{$name} {
+    @content;
+  }
+}
+
+@mixin animate-fade_in($duration) {
+  @include animate(animate-fade_in, $duration, linear, 1);
+
+  @include keyframes(animate-fade_in) {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+}
+
+@mixin animate-slide_in-horizontal($amount, $duration) {
+  @include animate(animate-slide_in-horizontal, $duration, linear, 1);
+
+  @include keyframes(animate-slide_in-horizontal) {
+    from {
+      transform: translateX($amount);
+    }
+    to {
+      transform: translateX(0);
+    }
+  }
+}
+
+@mixin animate-slide_in-vertical($amount, $duration, $amountX: 0) {
+  @include animate(animate-slide_in-horizontal, $duration, linear, 1);
+
+  @include keyframes(animate-slide_in-horizontal) {
+    from {
+      transform: translateY($amount) translateX($amountX);
+    }
+    to {
+      transform: translateY(0) translateX($amountX);
+    }
+  }
+}

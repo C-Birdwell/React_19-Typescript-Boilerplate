@@ -1,6 +1,6 @@
 import { COLOR_DEF_DARK } from "@/constants";
 import type { BackdropProps } from "./index.types";
-import { convertClassName } from "@/utils";
+import { convertVariantClassNames } from "@/utils";
 
 export const Backdrop: React.FC<BackdropProps> = ({
   backgroundTheme = COLOR_DEF_DARK,
@@ -8,7 +8,7 @@ export const Backdrop: React.FC<BackdropProps> = ({
   className = "",
   children,
 }) => {
-  const applyClassNames = convertClassName("backdrop", [
+  const applyClassNames = convertVariantClassNames("backdrop", [
     className,
     backgroundTheme,
   ]);

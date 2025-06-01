@@ -1,1 +1,26 @@
+div.row {
+  box-sizing: border-box;
+  background-color: transparent;
+  display: flex;
+  flex: 1;
+  flex-direction: row;
+  height: 100%;
+}
 
+div.column {
+  box-sizing: border-box;
+  background-color: transparent;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  height: 100%;
+  &--justify-center {
+    justify-content: center;
+  }
+}
+
+@for $i from 1 through 100 {
+  div.column--#{$i} {
+    flex: $i;
+  }
+}

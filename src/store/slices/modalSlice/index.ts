@@ -1,11 +1,11 @@
-import { COLOR_DEF_DARK, MODAL_DEF } from "@/constants";
+import { MODAL_DEF } from "@/constants";
 import { createSlice } from "@reduxjs/toolkit";
 
 import type { InitialState } from "./index.types";
 
 const initialState: InitialState = {
   visible: false,
-  backgroundTheme: COLOR_DEF_DARK,
+  backgroundTheme: "dark",
 };
 
 const modalSlice = createSlice({
@@ -21,9 +21,11 @@ const modalSlice = createSlice({
       const { payload } = action;
       state.backgroundTheme = payload;
     },
+
+    _modalReset: () => initialState,
   },
 });
 
-export const { _modalSetVisible, _modalSetBackgroundColor } =
+export const { _modalSetVisible, _modalSetBackgroundColor, _modalReset } =
   modalSlice.actions;
 export const modalReducer = modalSlice.reducer;

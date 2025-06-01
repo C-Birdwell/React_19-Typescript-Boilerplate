@@ -5,7 +5,8 @@ import { bindActionCreators } from "redux";
 import type { ActionCreators } from "./types";
 
 export const useActionCreators = <
-  T extends { [key: string]: (...args: unknown[]) => unknown }
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  T extends { [key: string]: (...args: any[]) => unknown }
 >(
   actionCreators: ActionCreators<T>
 ): T => {

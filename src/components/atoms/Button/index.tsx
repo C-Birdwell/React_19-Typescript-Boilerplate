@@ -1,5 +1,5 @@
 import type { ButtonProps } from "./index.types";
-import { convertClassName, disabledClassName } from "@/utils";
+import { convertVariantClassNames, disabledClassName } from "@/utils";
 
 import { buttonCLS } from "@/constants";
 
@@ -14,7 +14,7 @@ export const Button: React.FC<ButtonProps> = ({
     <button
       onClick={onClick}
       disabled={disabled}
-      className={convertClassName(buttonCLS, [
+      className={convertVariantClassNames(buttonCLS, [
         disabledClassName(disabled),
         className,
       ])}

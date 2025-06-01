@@ -1,8 +1,7 @@
-import { InputField, Button } from "@/components";
+import { InputField, PageTemplate } from "@/components";
 import { useActionCreators, useAppSelector } from "@/hooks";
 import { _exampleSetBar, _exampleSetFoo, type RootState } from "@/store";
 import type { InputOnChangeEvent } from "@/lib";
-import { setAppTheme } from "@/utils";
 
 const actionCreators = { _exampleSetBar, _exampleSetFoo };
 
@@ -19,17 +18,11 @@ export const HomePage: React.FC = () => {
     _exampleSetBar(e.target.value);
   };
 
-  const buttonHandlerLight = () => {
-    setAppTheme("light");
-  };
-
-  const buttonHandlerDark = () => {
-    setAppTheme("dark");
-  };
-
   return (
-    <div>
-      <h2>HomePage</h2>
+    <PageTemplate
+      title="Home"
+      subtitle="This subtitle can be set to anything you want."
+    >
       <p>
         {foo} {bar}
       </p>
@@ -47,8 +40,6 @@ export const HomePage: React.FC = () => {
         value={bar}
         onUpdate={inputReduxHandlerBar}
       />
-      <Button buttonText="Light Theme" onClick={buttonHandlerLight} />
-      <Button buttonText="Dark Theme" onClick={buttonHandlerDark} />
-    </div>
+    </PageTemplate>
   );
 };

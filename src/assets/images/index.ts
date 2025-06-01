@@ -1,3 +1,3 @@
-import favicon from "./favicon-CBirdwell.png";
-
-export { favicon };
+import favicon from "./favicon.png";
+import logo from "./placeholder_logo.svg";
+export { favicon, logo };
