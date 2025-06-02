@@ -1,7 +1,7 @@
 # React 19 Typescript Boilerplate :gift:
 
 A React 19 boilerplate built in Typescript. This boilerplate serves the foundation of any project requiring a React Frontend.
-This boilerplate was created by ==Colin Andrew Birdwell== for personal and professional use. Please feel free to use the entirety or parts of this project for your own use.
+This boilerplate was created by **Colin Andrew Birdwell** for personal and professional use. Please feel free to use the entirety or parts of this project for your own use.
 
 - React 19.1
 - Built with Vite using react-ts
