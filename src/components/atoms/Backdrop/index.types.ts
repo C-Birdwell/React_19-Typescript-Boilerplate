@@ -1,7 +1,7 @@
-import type { ClassName, PropChildren, BackgroundColorTypes } from "@/lib";
+import type { ClassName, PropChildren, BackgroundTheme } from "@/lib";
 
 export type BackdropProps = {
   onDismiss: () => void;
 } & ClassName &
   PropChildren &
-  BackgroundColorTypes;
+  BackgroundTheme;

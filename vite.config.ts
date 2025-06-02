@@ -18,5 +18,10 @@ export default defineConfig({
       "@utils": path.resolve(__dirname, "./src/utils"),
     },
   },
+  // Automatically opens Dev Environment in a new browser menu
+  server: {
+    open: true,
+  },
+
   plugins: [react()],
 });

@@ -1,7 +1,7 @@
 import type {
   PropChildren,
   ClassName,
-  BackgroundColorTypes,
+  BackgroundTheme,
   ParentClassName,
 } from "@/lib";
 
@@ -11,5 +11,5 @@ export type ButtonProps = {
   onClick: React.MouseEventHandler;
 } & ClassName &
   PropChildren &
-  BackgroundColorTypes &
+  BackgroundTheme &
   ParentClassName;

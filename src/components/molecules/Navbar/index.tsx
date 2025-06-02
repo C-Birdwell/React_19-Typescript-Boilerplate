@@ -1,6 +1,6 @@
 import type { NavbarProps } from "./index.types";
 
-import { NavigationLink, Column } from "@/components";
+import { NavLink, Column } from "@/components";
 
 export const Navbar: React.FC<NavbarProps> = ({ links, className }) => {
   const linksMapped = links.map((link) => {
@@ -10,7 +10,7 @@ export const Navbar: React.FC<NavbarProps> = ({ links, className }) => {
         key={`${className}-${targetText}`}
         classNames={["justify-center"]}
       >
-        <NavigationLink target={target} targetText={targetText} type={type} />
+        <NavLink target={target} targetText={targetText} type={type} />
       </Column>
     );
   });

@@ -1,4 +1,4 @@
-import type { NavigationLinkProps } from "@/components/index.types";
+import type { NavLinkProps } from "@/components/index.types";
 import type { ClassName } from "@/lib";
 
-export type NavbarProps = { links: NavigationLinkProps[] } & ClassName;
+export type NavbarProps = { links: NavLinkProps[] } & ClassName;

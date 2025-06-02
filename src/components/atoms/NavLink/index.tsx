@@ -2,12 +2,13 @@ import { useNavigate } from "react-router-dom";
 import { Link } from "react-router";
 
 import { Button } from "@/components";
-import type { NavigationLinkProps } from "./index.types";
+import type { NavLinkProps } from "./index.types";
 
-export const NavigationLink: React.FC<NavigationLinkProps> = ({
+export const NavLink: React.FC<NavLinkProps> = ({
   target,
   targetText,
   type = "text",
+  backgroundTheme = "primary",
 }) => {
   const navigate = useNavigate();
 
@@ -17,7 +18,11 @@ export const NavigationLink: React.FC<NavigationLinkProps> = ({
 
   const navLink = <Link to={target}>{targetText}</Link>;
   const navButton = (
-    <Button buttonText={targetText} onClick={navigateHandler} />
+    <Button
+      buttonText={targetText}
+      onClick={navigateHandler}
+      backgroundTheme={backgroundTheme}
+    />
   );
   return type === "text" ? navLink : navButton;
 };

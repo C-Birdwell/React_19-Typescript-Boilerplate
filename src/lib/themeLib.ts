@@ -1,5 +1,5 @@
 import type { ThemeColorsTypes } from "@/constants";
 
-export type BackgroundColorTypes = {
+export type BackgroundTheme = {
   backgroundTheme: (typeof ThemeColorsTypes)[number];
 };

@@ -1,4 +1,4 @@
-# React 19 Typescript Boilerplate
+# React 19 Typescript Boilerplate :gift:
 
 This boilerplate was built to the specifications of Colin Birdwell (the creator).
 
@@ -16,17 +16,77 @@ This boilerplate was built to the specifications of Colin Birdwell (the creator)
 
 To get started:
 
-- npm i
-- npm run dev
+`npm i`\
+or\
+`npm install`
+
+then to start the **Development Environment**:
+
+`npm run dev`\
+or\
+`npm start`
+
+_Note_:
+The boilerplate has been configured to open up a new browser tab on the designated default browser. If you wish to turn this off then navigate to:
+
+> :root  
+> |  
+> | - vite.config.ts
+
+Then change server -> open: true to false or delete the block of code:
+
+```text
+ server: {
+    open: true,
+  },
+```
 
 ## Path Aliasing
 
 Path Aliasing targets first direct folder of the src folder.
 To add more please follow the pattern found on:
 
-- tsconfig.app.json
-- tsconfig.json
-- vite.config.ts
+> :root  
+> |  
+> | - tsconfig.app.json  
+> | - tsconfig.json  
+> | - vite.config.ts
+
+### tsconfig.app.json & tsconfig.json
+
+```text
+ "paths": {
+      "@/*": ["./src/*"],
+      "@/assets": ["./src/assets"],
+      "@/components": ["./src/components"],
+      "@/constants": ["./src/constants"],
+      "@/hooks": ["./src/hooks"],
+      "@/lib": ["./src/lib"],
+      "@/pages": ["./src/pages"],
+      "@/routes": ["./src/routes"],
+      "@/store": ["./src/store"],
+      "@/styles": ["./src/styles"],
+      "@utils": ["./src/utils"]
+    }
+```
+
+### vite.config.ts
+
+```text
+alias: {
+      "@": path.resolve(__dirname, "./src"),
+      "@assets": path.resolve(__dirname, "./src/assets"),
+      "@components": path.resolve(__dirname, "./src/components"),
+      "@constants": path.resolve(__dirname, "./src/constants"),
+      "@hooks": path.resolve(__dirname, "./src/hooks"),
+      "@lib": path.resolve(__dirname, "./src/lib"),
+      "@pages": path.resolve(__dirname, "./src/pages"),
+      "@routes": path.resolve(__dirname, "./src/routes"),
+      "@store": path.resolve(__dirname, "./src/store"),
+      "@styles": path.resolve(__dirname, "./src/store"),
+      "@utils": path.resolve(__dirname, "./src/utils"),
+    },
+```
 
 ## Environment Files
 
