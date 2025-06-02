@@ -17,6 +17,8 @@ export const ModalRoute: React.FC<ModalRouteProps> = ({
 }) => {
   //   const [modalContent, setModalContent] = useState([<p>Not Initiated!!</p>]);
 
+  const foobar = [{ title: "hello", slide: <DemoSlideA />, id: "demo-1-a" }];
+
   switch (selection) {
     case "demo":
       return [<DemoSlideA />, <DemoSlideB />, <DemoSlideC />, <DemoSlideD />][

@@ -6,14 +6,14 @@ This boilerplate was created by **Colin Andrew Birdwell** for personal and profe
 - React 19.1
 - Built with Vite using react-ts
 
-## Integrated Features
+## Integrated Features :electric_plug:
 
 - Redux
 - Redux Toolkit
 - React Router
 - SaSS
 
-## Running Locally
+## Running Locally :hammer:
 
 To get started:
 
@@ -42,7 +42,7 @@ Then change server -> open: true to false or delete the block of code:
   },
 ```
 
-## Path Aliasing
+## Path Aliasing :dromedary_camel:
 
 Path Aliasing targets first direct folder of the src folder.
 To add more please follow the pattern found on:
@@ -89,6 +89,6 @@ alias: {
     },
 ```
 
-## Environment Files
+## Environment Files :earth_americas:
 
 A default .env file is located in the root directory. For security purposes it suggested to create a .env.development and .env.production when creating more complex projects.
