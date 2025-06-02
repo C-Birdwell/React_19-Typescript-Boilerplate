@@ -1,3 +1,27 @@
+@use "sass:color";
+
 @mixin background-with-opacity($color, $opacity) {
   background-color: rgba($color, $opacity);
+}
+
+@mixin background-colors-theme(
+  $name,
+  $color,
+  $textColor,
+  $opacity: 1,
+  $hoverState: false,
+  $hoverLightness: -20
+) {
+  &--#{$name} {
+    color: $textColor;
+    background-color: rgba($color, $opacity);
+    @if $hoverState {
+      &:hover {
+        background-color: color.adjust(
+          $color,
+          $lightness: $hoverLightness * 1%
+        );
+      }
+    }
+  }
 }

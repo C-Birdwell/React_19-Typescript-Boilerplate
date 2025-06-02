@@ -1,69 +1,79 @@
 @use "../../abstracts" as *;
 
+@mixin card_header($theme, $backgroundColor, $textColor) {
+  &.card--#{$theme} {
+    border-color: $textColor;
+
+    .modal_card_header {
+      background-color: $backgroundColor;
+      border-bottom: 2px solid $textColor;
+      h3 {
+        color: $textColor;
+      }
+      .button {
+        border-left: 2px solid $textColor;
+      }
+    }
+  }
+}
+
+$card-sizes: "small" 400px 5% 400px, "medium" 1000px 10% 80%, "large" 95% 5% 90%;
+
+@mixin set-card-sizes($name, $maxWidth, $top, $height) {
+  &.card--#{$name} {
+    max-width: $maxWidth;
+    top: $top;
+    height: $height;
+  }
+}
+
 .modal_card {
   position: absolute;
   z-index: 400;
-  top: 10%;
   margin: 0 auto;
   width: 500px;
   left: 50%;
   right: 50%;
   background-color: var(--color-background-primary);
   transform: translateX(-50%);
-  @include drop-shadow(rgba($color-dark, 0.8));
+  border: 2px solid transparent;
+  width: 100%;
 
+  @include drop-shadow(rgba($color-dark, 0.8));
   @include animate-slide_in-vertical(100vh, 0.25s, -50%);
 
   &_header {
-    background-color: var(--color-background-secondary);
     text-align: center;
     box-sizing: border-box;
     padding: 10px 0;
-  }
-  &.card--light {
-    @include drop-shadow(rgba($color-dark, 0.8));
-  }
-
-  &.card--dark {
-    border: 2px solid $color-dark;
-    .modal_card_header {
-      background-color: $color-dark;
-      h3 {
-        color: $color-light;
-      }
+    position: relative;
+    height: 50px;
+    .button {
+      position: absolute;
+      top: 0px;
+      right: 0px;
+      border-width: 0px;
+      border-radius: 0px;
+      height: 100%;
+      width: 50px;
+      box-sizing: border-box;
     }
   }
 
-  &.card--success {
-    .modal_card_header {
-      background-color: $color-success;
-      h3 {
-        color: $color-light;
-      }
-    }
+  &_content {
+    box-sizing: border-box;
+    border-top: solid 2px transparent;
+    padding: 0 10px;
+    height: calc(100% - 120px);
   }
-  &.card--caution {
-    border: 2px solid $color-dark;
-    .modal_card_header {
-      background-color: $color-caution;
-    }
+  @each $name, $maxWidth, $top, $height in $card-sizes {
+    @include set-card-sizes($name, $maxWidth, $top, $height);
   }
-  &.card--danger {
-    border: 2px solid $color-dark;
-    .modal_card_header {
-      background-color: $color-danger;
-    }
+  @each $name, $color, $textColor in $color-theme-text {
+    @include card_header($name, $color, $textColor);
   }
-  &.card--primary {
-    border: 2px solid var(--color-accent-primary);
-    .modal_card_header {
-      background-color: var(--color-accent-primary);
-    }
-  }
-  &.card--secondary {
-    border: 2px solid var(--color-accent-secondary);
-    .modal_card_header {
-      background-color: var(--color-accent-secondary);
-    }
+
+  &_nav {
+    height: 70px;
   }
 }

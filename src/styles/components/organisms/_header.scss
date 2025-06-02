@@ -9,8 +9,9 @@ header.header {
   top: 0px;
   left: 0px;
   background-color: var(--color-background-secondary);
-  border: 2px solid var(--color-accent-primary);
+  border: 2px solid var(--color-primary);
   border-top-width: 0px;
   border-radius: 0 0 $border-radius $border-radius;
   @include drop-shadow(rgba($color-dark, 0.5));
+  transform: translateY(0);
 }

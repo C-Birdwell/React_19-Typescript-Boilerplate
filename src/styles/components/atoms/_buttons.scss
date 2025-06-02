@@ -7,9 +7,9 @@ button.button {
   height: 50px;
   border-radius: $border-radius;
   cursor: pointer;
-  background-color: var(--color-accent-primary);
-  border: 2px solid var(--color-accent-secondary);
-  &:hover {
-    background-color: var(--color-accent-secondary);
+  border: 2px solid var(--color-text-primary);
+
+  @each $name, $color, $textColor in $color-theme-text {
+    @include background-colors-theme($name, $color, $textColor, 1, true);
   }
 }

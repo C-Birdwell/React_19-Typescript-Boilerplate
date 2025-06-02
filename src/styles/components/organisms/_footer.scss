@@ -3,7 +3,10 @@
 footer.footer {
   grid-area: footer;
   min-height: $height-footer;
-  background-color: var(--color-background-secondary);
+  background-color: var(--color-primary);
+  box-sizing: border-box;
+  border: 0px solid var(--color-secondary);
+  border-top-width: 2px;
   padding: 10px 0;
   .button {
     max-width: 200px;

@@ -1,8 +1,7 @@
-import type { ClassName, PropChildren } from "@/lib";
-import { ThemeColorsTypes } from "@/constants";
+import type { ClassName, PropChildren, BackgroundColorTypes } from "@/lib";
 
 export type BackdropProps = {
-  backgroundTheme?: (typeof ThemeColorsTypes)[number];
-  onDismiss?: () => void;
+  onDismiss: () => void;
 } & ClassName &
-  PropChildren;
+  PropChildren &
+  BackgroundColorTypes;

@@ -5,16 +5,16 @@
   --color-text-primary: #{$color-dark};
   --color-background-primary: #{$color-light};
   --color-background-secondary: #{$color-light-alt};
-  --color-accent-primary: #{$color-accent-1};
-  --color-accent-secondary: #{$color-accent-2};
+  --color-primary: #{$color-primary};
+  --color-secondary: #{$color-secondary};
 }
 
 [theme-mode="dark"] {
   --color-text-primary: #{$color-light};
   --color-background-primary: #{$color-dark};
   --color-background-secondary: #{$color-dark-alt};
-  --color-accent-primary: #{$color-accent-3};
-  --color-accent-secondary: #{$color-accent-4};
+  --color-primary: #{$color-secondary};
+  --color-secondary: #{$color-primary};
 }
 
 body,

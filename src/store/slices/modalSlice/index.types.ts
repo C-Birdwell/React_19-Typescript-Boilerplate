@@ -1,6 +1,4 @@
-import { ThemeColorsTypes } from "@/constants";
-
+import type { BackgroundColorTypes } from "@/lib";
 export type InitialState = {
   visible: boolean;
-  backgroundTheme?: (typeof ThemeColorsTypes)[number];
-};
+} & BackgroundColorTypes;

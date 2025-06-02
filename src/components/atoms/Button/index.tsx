@@ -1,24 +1,22 @@
 import type { ButtonProps } from "./index.types";
-import { convertVariantClassNames, disabledClassName } from "@/utils";
-
-import { buttonCLS } from "@/constants";
+import { disabledClassName, setClassNames } from "@/utils";
 
 export const Button: React.FC<ButtonProps> = ({
   buttonText,
   disabled = false,
-  onClick,
+  onClick = () => alert("Add a Function to this button"),
   children,
+  parentName = "",
   className = "",
+  backgroundTheme,
 }) => {
+  const buttonClassNames = setClassNames("button", parentName, [
+    className,
+    disabledClassName(disabled),
+    backgroundTheme,
+  ]);
   return (
-    <button
-      onClick={onClick}
-      disabled={disabled}
-      className={convertVariantClassNames(buttonCLS, [
-        disabledClassName(disabled),
-        className,
-      ])}
-    >
+    <button onClick={onClick} disabled={disabled} className={buttonClassNames}>
       {buttonText}
       {children}
     </button>

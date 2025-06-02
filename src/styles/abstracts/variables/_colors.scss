@@ -4,14 +4,31 @@ $color-light-alt: #cecece;
 $color-dark: #333333;
 $color-dark-alt: #4c4c4c;
 
-$color-disabled: #dddddd;
+$color-disabled: #adacac;
 
-$color-accent-1: #3a7fe8;
-$color-accent-2: #1e97cc;
+$color-primary: #1b7ae4;
+$color-secondary: #e4851b;
 
-$color-accent-3: #d5660c;
-$color-accent-4: #b15204;
-
-$color-success: #4a934a;
+$color-success: #0a830a;
 $color-caution: #eed202;
-$color-danger: #ff0d0d;
+$color-danger: #e60808;
+
+$color-theme: (
+  "dark": $color-dark,
+  "light": $color-light,
+  "success": $color-success,
+  "caution": $color-caution,
+  "danger": $color-danger,
+  "primary": $color-primary,
+  "secondary": $color-secondary,
+);
+
+$color-theme-text: (
+  "dark" $color-dark $color-light,
+  "light" $color-light $color-dark,
+  "success" $color-success $color-light,
+  "caution" $color-caution $color-dark,
+  "danger" $color-danger $color-light,
+  "primary" $color-primary $color-dark,
+  "secondary" $color-secondary $color-dark
+);
