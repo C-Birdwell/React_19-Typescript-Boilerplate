@@ -1,4 +1,4 @@
-# React 19 Typescript Boilerplate :gift:
+# :globe_with_meridians: React 19 Typescript Boilerplate
 
 A React 19 boilerplate built in Typescript. This boilerplate serves the foundation of any project requiring a React Frontend.
 This boilerplate was created by **Colin Andrew Birdwell** for personal and professional use. Please feel free to use the entirety or parts of this project for your own use.
@@ -6,14 +6,14 @@ This boilerplate was created by **Colin Andrew Birdwell** for personal and profe
 - React 19.1
 - Built with Vite using react-ts
 
-## Integrated Features :electric_plug:
+## :electric_plug: Integrated Features
 
 - Redux
 - Redux Toolkit
 - React Router
 - SaSS
 
-## Running Locally :hammer:
+## :hammer: Running Locally
 
 To get started:
 
@@ -42,7 +42,7 @@ Then change server -> open: true to false or delete the block of code:
   },
 ```
 
-## Path Aliasing :dromedary_camel:
+## :dromedary_camel: Path Aliasing
 
 Path Aliasing targets first direct folder of the src folder.
 To add more please follow the pattern found on:
@@ -89,6 +89,6 @@ alias: {
     },
 ```
 
-## Environment Files :earth_americas:
+## :earth_americas: Environment Files
 
 A default .env file is located in the root directory. For security purposes it suggested to create a .env.development and .env.production when creating more complex projects.
