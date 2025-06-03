@@ -42,7 +42,7 @@ export const ModalNav: React.FC<ModalNavProps> = ({
 
     return <></>;
   };
-
+  console.log(customActions);
   return (
     <div className="modal_card_nav">
       <Row>
