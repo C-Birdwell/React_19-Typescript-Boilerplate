@@ -1,6 +1,8 @@
+@use "../../abstracts/" as *;
+
 div.page {
   position: relative;
   background-color: transparent;
   box-sizing: border-box;
-  padding: 0 20px;
+  padding: $size-s $size-l 0 $size-l;
 }

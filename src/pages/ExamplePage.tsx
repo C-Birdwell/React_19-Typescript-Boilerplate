@@ -1,5 +1,5 @@
 import { type FC } from "react";
-import { Button } from "@/components";
+import { Button, Column, Row } from "@/components";
 
 import { _modalSetBackgroundColor, _modalSetVisible } from "@/store";
 import { useActionCreators } from "@/hooks";
@@ -62,16 +62,61 @@ export const ExamplePage: FC = () => {
       <p>
         {envFOO} {envBAR}
       </p>
-      <Button buttonText="Light Modal" onClick={buttonModalLightHandler} />
-      <Button buttonText="Dark Modal" onClick={buttonModalDarkHandler} />
-      <Button buttonText="Success Modal" onClick={buttonModalSuccessHandler} />
-      <Button buttonText="Caution Modal" onClick={buttonModalCautionHandler} />
-      <Button buttonText="Danger Modal" onClick={buttonModalDangerHandler} />
-      <Button buttonText="Primary Modal" onClick={buttonModalPrimaryHandler} />
-      <Button
-        buttonText="Secondary Modal"
-        onClick={buttonModalSecondaryHandler}
-      />
+      <div>
+        <Row>
+          <Column>
+            <Button
+              buttonText="Light Modal"
+              onClick={buttonModalLightHandler}
+              backgroundTheme="light"
+            />
+          </Column>
+          <Column>
+            <Button
+              buttonText="Dark Modal"
+              onClick={buttonModalDarkHandler}
+              backgroundTheme="dark"
+            />
+          </Column>
+          <Column>
+            <Button
+              buttonText="Primary Modal"
+              onClick={buttonModalPrimaryHandler}
+              backgroundTheme="primary"
+            />
+          </Column>
+          <Column>
+            <Button
+              buttonText="Secondary Modal"
+              onClick={buttonModalSecondaryHandler}
+              backgroundTheme="secondary"
+            />
+          </Column>
+        </Row>
+        <Row style={{ marginBottom: 20 }}>
+          <Column>
+            <Button
+              buttonText="Success Modal"
+              onClick={buttonModalSuccessHandler}
+              backgroundTheme="success"
+            />
+          </Column>
+          <Column>
+            <Button
+              buttonText="Caution Modal"
+              onClick={buttonModalCautionHandler}
+              backgroundTheme="caution"
+            />
+          </Column>
+          <Column>
+            <Button
+              buttonText="Danger Modal"
+              onClick={buttonModalDangerHandler}
+              backgroundTheme="danger"
+            />
+          </Column>
+        </Row>
+      </div>
     </>
   );
 };

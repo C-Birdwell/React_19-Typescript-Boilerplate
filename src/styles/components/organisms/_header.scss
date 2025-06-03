@@ -13,5 +13,13 @@ header.header {
   border-top-width: 0px;
   border-radius: 0 0 $border-radius $border-radius;
   @include drop-shadow(rgba($color-dark, 0.5));
-  transform: translateY(0);
+  @include animate-slide_top-vertical(-$height-header, 0.25s);
+  .header_row {
+    box-sizing: border-box;
+    padding: 0 $size-m;
+    img {
+      height: $height-header - 20px;
+      cursor: pointer;
+    }
+  }
 }

@@ -7,6 +7,7 @@ export const CardModal: React.FC<CardModalProps> = ({
   backgroundTheme = "light",
   children,
   modalIndex,
+  modalIndexLength,
   onNext,
   onPrev,
   onDismiss,
@@ -24,7 +25,13 @@ export const CardModal: React.FC<CardModalProps> = ({
         />
       </div>
       <div className="modal_card_content">{children}</div>
-      <ModalNav modalIndex={modalIndex} onNext={onNext} onPrev={onPrev} />
+      <ModalNav
+        modalIndex={modalIndex}
+        modalIndexLength={modalIndexLength}
+        onNext={onNext}
+        onPrev={onPrev}
+        onDismiss={onDismiss}
+      />
     </Card>
   );
 };

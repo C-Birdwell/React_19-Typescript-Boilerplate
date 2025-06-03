@@ -14,8 +14,27 @@ div.column {
   flex: 1;
   flex-direction: column;
   height: 100%;
-  &--justify-center {
-    justify-content: center;
+  &--justify {
+    &_start {
+      justify-content: flex-start;
+    }
+    &_center {
+      justify-content: center;
+    }
+    &_end {
+      justify-content: flex-end;
+    }
+  }
+  &--align {
+    &_start {
+      align-items: flex-start;
+    }
+    &_center {
+      align-items: center;
+    }
+    &_end {
+      align-items: flex-end;
+    }
   }
 }
 

@@ -2,7 +2,7 @@ import { useState, type FC } from "react";
 
 import { Backdrop, CardModal } from "@/components";
 import { useAppSelector, useActionCreators } from "@/hooks";
-import { ModalRoute } from "@/routes";
+import { modalRoutes } from "@/routes";
 
 //import type { ModalProps } from "./index.types";
 import { _modalReset, type RootState } from "@/store";
@@ -34,19 +34,22 @@ export const Modal: FC = () => {
     setModalIndex((modalIndex) => modalIndex + 1);
   };
 
+  const { title, slide } = modalRoutes("demo")[modalIndex];
+  const modalIndexLength = modalRoutes("demo").length;
   return (
     <div className="modal">
       <Backdrop backgroundTheme={backgroundTheme} onDismiss={onDismiss} />
       <CardModal
-        title="FOo Bar"
+        title={title}
         sizeType="medium"
         backgroundTheme={backgroundTheme}
         modalIndex={modalIndex}
+        modalIndexLength={modalIndexLength}
         onDismiss={onDismiss}
         onPrev={onPrev}
         onNext={onNext}
       >
-        <ModalRoute modalIndex={modalIndex} selection={"demo"} />
+        {slide}
       </CardModal>
     </div>
   );

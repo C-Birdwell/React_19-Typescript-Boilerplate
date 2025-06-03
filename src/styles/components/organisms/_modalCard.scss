@@ -1,5 +1,4 @@
 @use "../../abstracts" as *;
-
 @mixin card_header($theme, $backgroundColor, $textColor) {
   &.card--#{$theme} {
     border-color: $textColor;
@@ -31,7 +30,6 @@ $card-sizes: "small" 400px 5% 400px, "medium" 1000px 10% 80%, "large" 95% 5% 90%
   position: absolute;
   z-index: 400;
   margin: 0 auto;
-  width: 500px;
   left: 50%;
   right: 50%;
   background-color: var(--color-background-primary);
@@ -45,9 +43,9 @@ $card-sizes: "small" 400px 5% 400px, "medium" 1000px 10% 80%, "large" 95% 5% 90%
   &_header {
     text-align: center;
     box-sizing: border-box;
-    padding: 10px 0;
+    padding: $size-s 0;
     position: relative;
-    height: 50px;
+    height: $height-modal-header;
     .button {
       position: absolute;
       top: 0px;
@@ -55,7 +53,7 @@ $card-sizes: "small" 400px 5% 400px, "medium" 1000px 10% 80%, "large" 95% 5% 90%
       border-width: 0px;
       border-radius: 0px;
       height: 100%;
-      width: 50px;
+      width: $height-modal-header;
       box-sizing: border-box;
     }
   }
@@ -63,7 +61,7 @@ $card-sizes: "small" 400px 5% 400px, "medium" 1000px 10% 80%, "large" 95% 5% 90%
   &_content {
     box-sizing: border-box;
     border-top: solid 2px transparent;
-    padding: 0 10px;
+    padding: 0 $size-s;
     height: calc(100% - 120px);
   }
   @each $name, $maxWidth, $top, $height in $card-sizes {
@@ -75,5 +73,7 @@ $card-sizes: "small" 400px 5% 400px, "medium" 1000px 10% 80%, "large" 95% 5% 90%
 
   &_nav {
     height: 70px;
+    box-sizing: border-box;
+    padding: 0 $size-s;
   }
 }

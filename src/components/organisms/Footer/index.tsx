@@ -13,12 +13,20 @@ export const Footer: React.FC<FooterProps> = ({ className }) => {
 
   return (
     <footer className={className}>
-      <Row>
-        <Column>
-          <Button buttonText="Light Theme" onClick={buttonHandlerLight} />
+      <Row classNames={["theme"]}>
+        <Column classNames={["justify_center", "align_center"]}>
+          <Button
+            buttonText="Light Theme"
+            onClick={buttonHandlerLight}
+            backgroundTheme="light"
+          />
         </Column>
-        <Column>
-          <Button buttonText="Dark Theme" onClick={buttonHandlerDark} />
+        <Column classNames={["justify_center", "align_center"]}>
+          <Button
+            buttonText="Dark Theme"
+            onClick={buttonHandlerDark}
+            backgroundTheme="dark"
+          />
         </Column>
       </Row>
     </footer>

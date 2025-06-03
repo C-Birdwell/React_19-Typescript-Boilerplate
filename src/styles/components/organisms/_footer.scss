@@ -2,13 +2,23 @@
 
 footer.footer {
   grid-area: footer;
-  min-height: $height-footer;
+  height: $height-footer;
   background-color: var(--color-primary);
   box-sizing: border-box;
   border: 0px solid var(--color-secondary);
   border-top-width: 2px;
-  padding: 10px 0;
-  .button {
-    max-width: 200px;
+  padding: $size-s 0;
+  position: relative;
+  .row--theme {
+    width: 500px;
+    position: absolute;
+    height: $height-footer - 2px;
+    right: 0px;
+    top: 0px;
+    box-sizing: border-box;
+    overflow: hidden;
+    .button {
+      width: 200px;
+    }
   }
 }

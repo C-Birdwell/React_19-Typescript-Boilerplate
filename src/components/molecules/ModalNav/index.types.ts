@@ -1,11 +1,6 @@
-import type { BackgroundTheme, ModalNavigation } from "@/lib";
-
-type CustomActionType = {
-  buttonText: string;
-  action: () => void;
-} & BackgroundTheme;
+import type { ActionType, ModalNavigation } from "@/lib";
 
 export type ModalNavProps = {
-  customActions?: CustomActionType[];
-  endAction?: CustomActionType;
+  customActions?: ActionType[];
+  endAction?: ActionType;
 } & ModalNavigation;

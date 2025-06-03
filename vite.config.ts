@@ -22,6 +22,6 @@ export default defineConfig({
   server: {
     open: true,
   },
-
   plugins: [react()],
+  base: "/React_19-Typescript-Boilerplate",
 });
