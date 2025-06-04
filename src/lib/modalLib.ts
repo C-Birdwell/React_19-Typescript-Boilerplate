@@ -1,3 +1,5 @@
+import type { ActionType } from "./actionsLib";
+
 export type ModalNavigation = {
   modalIndex: number;
   modalIndexLength: number;
@@ -10,4 +12,5 @@ export type ModalRoute = {
   title: string;
   slide: React.ReactElement;
   id: string;
+  customActions?: ActionType[] | null;
 };

@@ -1,7 +1,7 @@
-import type { CardModalProps } from "./index.types";
+import type { ModalTemplateProps } from "./index.types";
 import { Card, Button, ModalNav } from "@/components";
 
-export const CardModal: React.FC<CardModalProps> = ({
+export const ModalTemplate: React.FC<ModalTemplateProps> = ({
   title,
   sizeType = "medium",
   backgroundTheme = "light",
@@ -11,10 +11,11 @@ export const CardModal: React.FC<CardModalProps> = ({
   onNext,
   onPrev,
   onDismiss,
+  customActions,
 }) => {
-  const modalCardClassNames = [sizeType, backgroundTheme];
+  const modalTemplateClassNames = [sizeType, backgroundTheme];
   return (
-    <Card classNames={modalCardClassNames} parentName="modal">
+    <Card classNames={modalTemplateClassNames} parentName="modal">
       <div className="modal_card_header">
         <h3>{title}</h3>
         <Button
@@ -31,6 +32,7 @@ export const CardModal: React.FC<CardModalProps> = ({
         onNext={onNext}
         onPrev={onPrev}
         onDismiss={onDismiss}
+        customActions={customActions}
       />
     </Card>
   );

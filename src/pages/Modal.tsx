@@ -1,6 +1,6 @@
 import { useState, type FC } from "react";
 
-import { Backdrop, CardModal } from "@/components";
+import { Backdrop, ModalTemplate } from "@/components";
 import { useAppSelector, useActionCreators } from "@/hooks";
 import { modalRoutes } from "@/routes";
 
@@ -10,7 +10,7 @@ import { _modalReset, type RootState } from "@/store";
 const actionCreators = { _modalReset };
 
 export const Modal: FC = () => {
-  const { visible, backgroundTheme } = useAppSelector(
+  const { visible, backgroundTheme, modalRoute } = useAppSelector(
     (state: RootState) => state.modal
   );
   const { _modalReset } = useActionCreators(actionCreators);
@@ -34,12 +34,12 @@ export const Modal: FC = () => {
     setModalIndex((modalIndex) => modalIndex + 1);
   };
 
-  const { title, slide } = modalRoutes("demo")[modalIndex];
-  const modalIndexLength = modalRoutes("demo").length;
+  const { title, slide, customActions } = modalRoutes(modalRoute)[modalIndex];
+  const modalIndexLength = modalRoutes(modalRoute).length;
   return (
     <div className="modal">
       <Backdrop backgroundTheme={backgroundTheme} onDismiss={onDismiss} />
-      <CardModal
+      <ModalTemplate
         title={title}
         sizeType="medium"
         backgroundTheme={backgroundTheme}
@@ -48,9 +48,10 @@ export const Modal: FC = () => {
         onDismiss={onDismiss}
         onPrev={onPrev}
         onNext={onNext}
+        customActions={customActions}
       >
         {slide}
-      </CardModal>
+      </ModalTemplate>
     </div>
   );
 };

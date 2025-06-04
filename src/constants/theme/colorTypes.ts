@@ -16,4 +16,5 @@ export const ThemeColorsTypes = [
   COLOR_DEF_SUCCESS,
   COLOR_DEF_CAUTION,
   COLOR_DEF_DANGER,
+  "",
 ] as const;

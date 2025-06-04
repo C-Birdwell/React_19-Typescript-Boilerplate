@@ -1,5 +1,5 @@
 // Page URLS
-export const URL_HOME = "/React_19-Typescript-Boilerplate";
+export const URL_HOME = "/";
 export const URL_EXAMPLE = "/foobar";
 export const URL_MODALS = "/modals";
 export const URL_NOT_FOUND = "*";

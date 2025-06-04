@@ -7,7 +7,7 @@ export const ModalNav: React.FC<ModalNavProps> = ({
   onNext,
   onPrev,
   onDismiss,
-  customActions,
+  customActions = [],
   endAction,
 }) => {
   const renderBackButton = modalIndex > 0 && (
@@ -20,7 +20,6 @@ export const ModalNav: React.FC<ModalNavProps> = ({
 
   const renderDismissButton = () => {
     if (modalIndex === modalIndexLength - 1) {
-      console.log(endAction);
       if (endAction !== undefined) {
         return (
           <Button
@@ -42,16 +41,38 @@ export const ModalNav: React.FC<ModalNavProps> = ({
 
     return <></>;
   };
-  console.log(customActions);
+
+  const renderCustomActions = customActions?.map((custom) => {
+    const { backgroundTheme, text, action, id } = custom;
+    return (
+      <Column key={id} classNames={["justify_center", "align_center"]}>
+        <Button
+          buttonText={text}
+          onClick={action}
+          backgroundTheme={backgroundTheme}
+        />
+      </Column>
+    );
+  });
+
   return (
     <div className="modal_card_nav">
       <Row>
-        <Column>{renderBackButton}</Column>
-        <Column size={3}></Column>
-        <Column>
-          {renderNextButton}
-          {renderDismissButton()}
+        {modalIndexLength > 1 && (
+          <Column classNames={["justify_center", "align_start"]}>
+            {renderBackButton}
+          </Column>
+        )}
+
+        <Column size={3} classNames={["align_center"]}>
+          <Row>{renderCustomActions}</Row>
         </Column>
+        {modalIndexLength > 1 && (
+          <Column classNames={["justify_center", "align_end"]}>
+            {renderNextButton}
+            {renderDismissButton()}
+          </Column>
+        )}
       </Row>
     </div>
   );

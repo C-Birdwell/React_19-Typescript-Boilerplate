@@ -8,7 +8,7 @@ button.button {
   border-radius: $border-radius;
   cursor: pointer;
   border: 2px solid var(--color-text-primary);
-
+  font-weight: 700;
   @each $name, $color, $textColor in $color-theme-text {
     @include background-colors-theme($name, $color, $textColor, 1, true);
   }

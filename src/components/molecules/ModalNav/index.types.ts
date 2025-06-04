@@ -1,6 +1,6 @@
-import type { ActionType, ModalNavigation } from "@/lib";
+import type { ActionType, ModalNavigation, CustomActions } from "@/lib";
 
 export type ModalNavProps = {
-  customActions?: ActionType[];
   endAction?: ActionType;
-} & ModalNavigation;
+} & ModalNavigation &
+  CustomActions;

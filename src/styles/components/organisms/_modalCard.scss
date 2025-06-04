@@ -62,7 +62,8 @@ $card-sizes: "small" 400px 5% 400px, "medium" 1000px 10% 80%, "large" 95% 5% 90%
     box-sizing: border-box;
     border-top: solid 2px transparent;
     padding: 0 $size-s;
-    height: calc(100% - 120px);
+    height: calc(100% - ($height-modal-header + 70px));
+    overflow-y: auto;
   }
   @each $name, $maxWidth, $top, $height in $card-sizes {
     @include set-card-sizes($name, $maxWidth, $top, $height);
@@ -75,5 +76,16 @@ $card-sizes: "small" 400px 5% 400px, "medium" 1000px 10% 80%, "large" 95% 5% 90%
     height: 70px;
     box-sizing: border-box;
     padding: 0 $size-s;
+    border-top: 2px solid var(--color-text-primary);
+    .button {
+      width: 100%;
+      max-width: 200px;
+      transform: scale(100%);
+      transition: transform $speed-025, background-color $speed-050;
+      &:hover {
+        transform: scale(102%);
+      }
+      @include animate-fade-in($speed-025);
+    }
   }
 }

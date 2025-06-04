@@ -34,12 +34,12 @@ The boilerplate has been configured to open up a new browser tab on the designat
 > |  
 > | - vite.config.ts
 
-Then change server -> open: true to false or delete the block of code:
+Then change server -> open: true to false:
 
-```text
- server: {
-    open: true,
-  },
+````text
+const server = {
+  open: true,
+};
 ```
 
 ## :dromedary_camel: Path Aliasing
@@ -47,10 +47,10 @@ Then change server -> open: true to false or delete the block of code:
 Path Aliasing targets first direct folder of the src folder.
 To add more please follow the pattern found on:
 
-> :root  
-> |  
-> | - tsconfig.app.json  
-> | - tsconfig.json  
+> :root
+> |
+> | - tsconfig.app.json
+> | - tsconfig.json
 > | - vite.config.ts
 
 ### tsconfig.app.json & tsconfig.json
@@ -69,7 +69,7 @@ To add more please follow the pattern found on:
       "@/styles": ["./src/styles"],
       "@utils": ["./src/utils"]
     }
-```
+````
 
 ### vite.config.ts
 

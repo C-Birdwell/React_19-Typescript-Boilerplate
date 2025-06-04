@@ -1,0 +1,14 @@
+@use "./animate" as animate;
+
+@mixin animate-fade-in($duration) {
+  @include animate.animate(animate-fade-in, $duration, linear, 1);
+
+  @include animate.keyframes(animate-fade-in) {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+}
