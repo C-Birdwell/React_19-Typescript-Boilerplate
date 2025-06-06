@@ -2,12 +2,15 @@
 
 div.page--modal-demo {
   &_row {
-    padding: $size-l 0;
-    max-width: 1200px;
     width: 100%;
     margin: 0 auto;
     .button {
       width: 200px;
+    }
+  }
+  div.page_card .card {
+    h4 {
+      margin-bottom: $space-l;
     }
   }
 }

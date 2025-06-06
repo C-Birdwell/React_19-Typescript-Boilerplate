@@ -5,6 +5,8 @@ div.card {
   background-color: var(--color-background-primary);
   box-sizing: border-box;
   overflow: hidden;
+  padding: $space-l;
+
   &--border {
     border: 2px solid var(--color-text-primary);
   }

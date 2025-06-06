@@ -1,5 +1,5 @@
 import type { ModalTemplateProps } from "./index.types";
-import { Card, Button, ModalNav } from "@/components";
+import { Card, Button, ModalNav, Heading } from "@/components";
 
 export const ModalTemplate: React.FC<ModalTemplateProps> = ({
   title,
@@ -17,7 +17,7 @@ export const ModalTemplate: React.FC<ModalTemplateProps> = ({
   return (
     <Card classNames={modalTemplateClassNames} parentName="modal">
       <div className="modal_card_header">
-        <h3>{title}</h3>
+        <Heading size={3}>{title}</Heading>
         <Button
           onClick={onDismiss}
           buttonText="X"

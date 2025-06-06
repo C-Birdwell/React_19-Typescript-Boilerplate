@@ -26,7 +26,7 @@ $card-sizes: "small" 400px 5% 400px, "medium" 1000px 10% 80%, "large" 95% 5% 90%
   }
 }
 
-.modal_card {
+div.modal_card {
   position: absolute;
   z-index: 400;
   margin: 0 auto;
@@ -36,14 +36,14 @@ $card-sizes: "small" 400px 5% 400px, "medium" 1000px 10% 80%, "large" 95% 5% 90%
   transform: translateX(-50%);
   border: 2px solid transparent;
   width: 100%;
-
+  padding: 0 0 0 0;
   @include drop-shadow(rgba($color-dark, 0.8));
   @include animate-slide_in-vertical(100vh, 0.25s, -50%);
 
   &_header {
     text-align: center;
     box-sizing: border-box;
-    padding: $size-s 0;
+    padding: $space-s 0;
     position: relative;
     height: $height-modal-header;
     h3 {
@@ -67,7 +67,7 @@ $card-sizes: "small" 400px 5% 400px, "medium" 1000px 10% 80%, "large" 95% 5% 90%
   &_content {
     box-sizing: border-box;
     border-top: solid 2px transparent;
-    padding: $size-s $size-s 0 $size-s;
+    padding: $space-s $space-s 0 $space-s;
     height: calc(100% - ($height-modal-header + 70px));
     overflow-y: auto;
   }
@@ -81,7 +81,7 @@ $card-sizes: "small" 400px 5% 400px, "medium" 1000px 10% 80%, "large" 95% 5% 90%
   &_nav {
     height: 70px;
     box-sizing: border-box;
-    padding: 0 $size-s;
+    padding: 0 $space-s;
     border-top: 2px solid var(--color-text-primary);
     .button {
       width: 100%;

@@ -1,3 +1,4 @@
+import { Card, Heading } from "@/components/atoms";
 import { type PageDefaultProps } from "./index.types";
 import { convertVariantClassNames } from "@/utils";
 
@@ -9,11 +10,13 @@ export const PageTemplate: React.FC<PageDefaultProps> = ({
   const classNames = `${convertVariantClassNames("page", [title])}`;
   return (
     <div className={classNames}>
-      <div className={`page_title`}>
-        <h2>{title}</h2>
-        <h3>{subtitle}</h3>
-      </div>
-      <section>{children}</section>
+      <Card border parentName="page">
+        <div className={`page_card_title`}>
+          <Heading size={2}>{title}</Heading>
+          <Heading size={3}>{subtitle}</Heading>
+        </div>
+        <section>{children}</section>
+      </Card>
     </div>
   );
 };

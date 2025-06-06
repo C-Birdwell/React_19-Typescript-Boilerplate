@@ -4,15 +4,22 @@ div.page {
   position: relative;
   background-color: transparent;
   box-sizing: border-box;
-  padding: $size-m $size-l 0 $size-l;
-  &_title {
-    h2 {
-      margin-bottom: $size-l;
-      color: var(--color-primary);
+  padding: $space-l $space-l 0 $space-l;
+  height: calc(100% - $space-l);
+  &_card {
+    height: 100%;
+    &_title {
+      h2 {
+        margin-bottom: $space-l;
+        color: var(--color-primary);
+      }
+      h3 {
+        color: var(--color-secondary);
+        margin-bottom: $space-l;
+      }
     }
-    h3 {
-      color: var(--color-secondary);
-      margin-bottom: $size-l;
-    }
+  }
+  section {
+    margin-bottom: $space-l;
   }
 }
