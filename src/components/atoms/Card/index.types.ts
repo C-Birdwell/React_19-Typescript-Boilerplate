@@ -5,7 +5,13 @@ import type {
   ParentClassName,
 } from "@/lib";
 
-export type CardProps = PropChildren &
+import { ThemeSizeTypes } from "@/constants";
+
+export type CardProps = {
+  border?: boolean;
+  animationSlide?: "left" | "right" | "top" | "bottom" | "";
+  marginBottom?: (typeof ThemeSizeTypes)[number];
+} & PropChildren &
   PropsSpreadOperator &
   ClassNamesList &
   ParentClassName;

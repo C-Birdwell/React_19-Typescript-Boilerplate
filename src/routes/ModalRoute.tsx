@@ -4,7 +4,7 @@ import {
   DemoSlideC,
   DemoSlideD,
   DemoSlideSuccess,
-} from "@/components/organisms/DemoModalSlides";
+} from "@/components";
 import type { ModalRoute, ActionType } from "@/lib";
 
 export const modalRoutes = (selection: string): ModalRoute[] => {

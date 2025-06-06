@@ -5,4 +5,13 @@ div.card {
   background-color: var(--color-background-primary);
   box-sizing: border-box;
   overflow: hidden;
+  &--border {
+    border: 2px solid var(--color-text-primary);
+  }
+  &--left {
+    @include animate-slide_in-left(100vw, $speed-050);
+  }
+  &--right {
+    @include animate-slide_in-right(100vw, $speed-050);
+  }
 }

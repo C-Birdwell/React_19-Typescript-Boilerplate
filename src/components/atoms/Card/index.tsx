@@ -2,14 +2,28 @@ import { setClassNames } from "@/utils";
 import type { CardProps } from "./index.types";
 
 export const Card: React.FC<CardProps> = ({
+  border = false,
   children,
-  classNames,
+  classNames = [],
   parentName,
+  marginBottom = 0,
+  animationSlide = "",
   ...rest
 }) => {
-  const cardClassNames = setClassNames("card", parentName, classNames);
+  let formatClassNames = classNames;
+  if (border) {
+    formatClassNames = [...formatClassNames, "border"];
+  }
+  if (animationSlide) {
+    formatClassNames = [...formatClassNames, animationSlide];
+  }
+  const cardClassNames = setClassNames("card", parentName, formatClassNames);
   return (
-    <div className={cardClassNames} {...rest}>
+    <div
+      className={cardClassNames}
+      style={{ marginBottom: marginBottom }}
+      {...rest}
+    >
       {children}
     </div>
   );

@@ -6,14 +6,12 @@ export const PageTemplate: React.FC<PageDefaultProps> = ({
   subtitle,
   children,
 }) => {
-  const classNames = `${convertVariantClassNames("page", [
-    title.toLowerCase(),
-  ])}`;
+  const classNames = `${convertVariantClassNames("page", [title])}`;
   return (
     <div className={classNames}>
       <div className={`page_title`}>
-        <h3>{title}</h3>
-        <h4>{subtitle}</h4>
+        <h2>{title}</h2>
+        <h3>{subtitle}</h3>
       </div>
       <section>{children}</section>
     </div>

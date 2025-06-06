@@ -7,10 +7,10 @@ export const Header: React.FC<HeaderProps> = ({ className }) => {
   return (
     <header className={className}>
       <Row parentName="header">
-        <Column classNames={["justify_center", "align_start"]}>
+        <Column classNames={["justify-center", "align-start"]}>
           <Logo />
         </Column>
-        <Column size={4} classNames={["align_end"]}>
+        <Column size={4} classNames={["align-end"]}>
           <Navbar links={linksArray} className={className} />
         </Column>
       </Row>

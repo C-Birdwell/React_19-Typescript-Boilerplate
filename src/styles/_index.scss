@@ -2,4 +2,10 @@
 @use "./vendors" as *;
 // App specific styles
 @use "./base" as *;
-@use "./components/" as *;
+@use "./components" as *;
+@use "./pages" as *;
+
+//! Optional SaSS or CSS code can be placed here to override styles. This is not advised.
+// #root * {
+//   display: none !important;
+// }

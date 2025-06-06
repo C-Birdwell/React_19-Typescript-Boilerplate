@@ -14,14 +14,14 @@ export const Footer: React.FC<FooterProps> = ({ className }) => {
   return (
     <footer className={className}>
       <Row classNames={["theme"]}>
-        <Column classNames={["justify_center", "align_center"]}>
+        <Column classNames={["justify-center", "align-center"]}>
           <Button
             buttonText="Light Theme"
             onClick={buttonHandlerLight}
             backgroundTheme="light"
           />
         </Column>
-        <Column classNames={["justify_center", "align_center"]}>
+        <Column classNames={["justify-center", "align-center"]}>
           <Button
             buttonText="Dark Theme"
             onClick={buttonHandlerDark}

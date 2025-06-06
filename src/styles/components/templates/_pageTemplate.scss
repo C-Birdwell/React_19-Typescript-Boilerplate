@@ -4,5 +4,15 @@ div.page {
   position: relative;
   background-color: transparent;
   box-sizing: border-box;
-  padding: $size-s $size-l 0 $size-l;
+  padding: $size-m $size-l 0 $size-l;
+  &_title {
+    h2 {
+      margin-bottom: $size-l;
+      color: var(--color-primary);
+    }
+    h3 {
+      color: var(--color-secondary);
+      margin-bottom: $size-l;
+    }
+  }
 }

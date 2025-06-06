@@ -14,7 +14,9 @@ export const convertVariantClassNames = (
   }
 
   const mapClassNamesList = () =>
-    classNamesListFiltered?.map((name) => ` ${currentName}--${name}`);
+    classNamesListFiltered?.map(
+      (name) => ` ${currentName}--${name.toLowerCase().split(" ").join("-")}`
+    );
 
   return `${currentName}${mapClassNamesList()}`.replace(/,/g, "");
 };

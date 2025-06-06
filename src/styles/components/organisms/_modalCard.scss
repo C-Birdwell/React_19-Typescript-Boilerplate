@@ -46,6 +46,12 @@ $card-sizes: "small" 400px 5% 400px, "medium" 1000px 10% 80%, "large" 95% 5% 90%
     padding: $size-s 0;
     position: relative;
     height: $height-modal-header;
+    h3 {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+    }
     .button {
       position: absolute;
       top: 0px;
@@ -61,7 +67,7 @@ $card-sizes: "small" 400px 5% 400px, "medium" 1000px 10% 80%, "large" 95% 5% 90%
   &_content {
     box-sizing: border-box;
     border-top: solid 2px transparent;
-    padding: 0 $size-s;
+    padding: $size-s $size-s 0 $size-s;
     height: calc(100% - ($height-modal-header + 70px));
     overflow-y: auto;
   }

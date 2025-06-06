@@ -1,6 +1,6 @@
 import { Route, Routes } from "react-router-dom";
 
-import { HomePage, ExamplePage, NotFoundPage } from "@/pages";
+import { HomePage, ExamplePage, NotFoundPage, ModalDemoPage } from "@/pages";
 import {
   URL_HOME,
   URL_EXAMPLE,
@@ -15,7 +15,7 @@ export const PagesRoutes: React.FC = () => {
       <Routes>
         <Route path={URL_HOME} index element={<HomePage />} />
         <Route path={URL_EXAMPLE} element={<ExamplePage />} />
-        <Route path={URL_MODALS} element={<ExamplePage />} />
+        <Route path={URL_MODALS} element={<ModalDemoPage />} />
         <Route path={URL_NOT_FOUND} element={<NotFoundPage />} />
       </Routes>
     </main>

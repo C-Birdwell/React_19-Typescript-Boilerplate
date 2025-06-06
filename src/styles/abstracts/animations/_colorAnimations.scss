@@ -1,22 +1,38 @@
 @use "./animate" as animate;
 
-@mixin animate-slide_in-horizontal($amount, $duration) {
-  @include animate.animate(animate-slide_in-horizontal, $duration, linear, 1);
+@mixin animate-slide_in-right($amount, $duration) {
+  @include animate.animate(animate-slide_in-right, $duration, linear, 1);
 
-  @include animate.keyframes(animate-slide_in-horizontal) {
+  @include animate.keyframes(animate-slide_in-right) {
     from {
+      opacity: 0;
       transform: translateX($amount);
     }
     to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+}
+@mixin animate-slide_in-left($amount, $duration) {
+  @include animate.animate(animate-slide_in-left, $duration, linear, 1);
+
+  @include animate.keyframes(animate-slide_in-left) {
+    from {
+      opacity: 0;
+      transform: translateX($amount * -1);
+    }
+    to {
+      opacity: 1;
       transform: translateX(0);
     }
   }
 }
 
 @mixin animate-slide_in-vertical($amount, $duration, $amountX: 0) {
-  @include animate.animate(animate-slide_in-horizontal, $duration, linear, 1);
+  @include animate.animate(animate-slide_in-vertical, $duration, linear, 1);
 
-  @include animate.keyframes(animate-slide_in-horizontal) {
+  @include animate.keyframes(animate-slide_in-vertical) {
     from {
       transform: translateY($amount) translateX($amountX);
     }

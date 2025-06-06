@@ -16,24 +16,24 @@ div.column {
   flex-direction: column;
   height: 100%;
   &--justify {
-    &_start {
+    &-start {
       justify-content: flex-start;
     }
-    &_center {
+    &-center {
       justify-content: center;
     }
-    &_end {
+    &-end {
       justify-content: flex-end;
     }
   }
   &--align {
-    &_start {
+    &-start {
       align-items: flex-start;
     }
-    &_center {
+    &-center {
       align-items: center;
     }
-    &_end {
+    &-end {
       align-items: flex-end;
     }
   }

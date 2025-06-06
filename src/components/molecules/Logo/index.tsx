@@ -11,11 +11,8 @@ export const Logo: React.FC<LogoProps> = () => {
   };
 
   return (
-    <img
-      onClick={navigateHandler}
-      src={logo}
-      className="logo"
-      alt={`Logo for ${envTitle}`}
-    />
+    <div className="logo">
+      <img onClick={navigateHandler} src={logo} alt={`Logo for ${envTitle}.`} />
+    </div>
   );
 };

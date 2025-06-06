@@ -33,7 +33,7 @@ export const ModalNav: React.FC<ModalNavProps> = ({
           <Button
             buttonText="Close"
             onClick={onDismiss}
-            backgroundTheme="dark"
+            backgroundTheme="danger"
           />
         );
       }
@@ -45,7 +45,7 @@ export const ModalNav: React.FC<ModalNavProps> = ({
   const renderCustomActions = customActions?.map((custom) => {
     const { backgroundTheme, text, action, id } = custom;
     return (
-      <Column key={id} classNames={["justify_center", "align_center"]}>
+      <Column key={id} classNames={["justify-center", "align-center"]}>
         <Button
           buttonText={text}
           onClick={action}
@@ -59,16 +59,16 @@ export const ModalNav: React.FC<ModalNavProps> = ({
     <div className="modal_card_nav">
       <Row>
         {modalIndexLength > 1 && (
-          <Column classNames={["justify_center", "align_start"]}>
+          <Column classNames={["justify-center", "align-start"]}>
             {renderBackButton}
           </Column>
         )}
 
-        <Column size={3} classNames={["align_center"]}>
+        <Column size={3} classNames={["align-center"]}>
           <Row>{renderCustomActions}</Row>
         </Column>
         {modalIndexLength > 1 && (
-          <Column classNames={["justify_center", "align_end"]}>
+          <Column classNames={["justify-center", "align-end"]}>
             {renderNextButton}
             {renderDismissButton()}
           </Column>
