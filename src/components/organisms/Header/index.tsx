@@ -38,7 +38,11 @@ export const Header: FC<HeaderProps> = ({ className }) => {
           </Column>
           <Column size={4} classNames={["justify-center", "align-end"]}>
             {desktopLayout ? (
-              <Navbar links={linksArray} parentName={className} />
+              <Navbar
+                links={linksArray}
+                parentName={className}
+                onDismiss={null}
+              />
             ) : (
               <MobileNavButton onPress={clickHandler} isActive={isActive} />
             )}
