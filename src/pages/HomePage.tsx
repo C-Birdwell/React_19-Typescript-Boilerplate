@@ -1,12 +1,13 @@
 import { InputField, PageTemplate } from "@/components";
-import { useActionCreators, useAppSelector } from "@/hooks";
+import { useActionCreators, useStoreSelector } from "@/hooks";
 import { _exampleSetBar, _exampleSetFoo, type RootState } from "@/store";
 import type { InputOnChangeEvent } from "@/lib";
 
 const actionCreators = { _exampleSetBar, _exampleSetFoo };
+const envTitle = import.meta.env.VITE_API_TITLE;
 
 export const HomePage: React.FC = () => {
-  const { foo, bar } = useAppSelector((state: RootState) => state.example);
+  const { foo, bar } = useStoreSelector((state: RootState) => state.example);
 
   const { _exampleSetBar, _exampleSetFoo } = useActionCreators(actionCreators);
 
@@ -19,10 +20,7 @@ export const HomePage: React.FC = () => {
   };
 
   return (
-    <PageTemplate
-      title="Home"
-      subtitle="This subtitle can be set to anything you want."
-    >
+    <PageTemplate title={envTitle} subtitle="This is the Home Page.">
       <p>
         {foo} {bar}
       </p>

@@ -8,13 +8,13 @@ import {
 } from "@/store";
 import { useActionCreators } from "@/hooks";
 import {
-  COLOR_DEF_CAUTION,
-  COLOR_DEF_DANGER,
-  COLOR_DEF_DARK,
-  COLOR_DEF_LIGHT,
-  COLOR_DEF_PRIMARY,
-  COLOR_DEF_SECONDARY,
-  COLOR_DEF_SUCCESS,
+  COLOR_CAUTION,
+  COLOR_DANGER,
+  COLOR_DARK,
+  COLOR_LIGHT,
+  COLOR_PRIMARY,
+  COLOR_SECONDARY,
+  COLOR_SUCCESS,
 } from "@/constants";
 
 const actionCreators = {
@@ -32,48 +32,48 @@ export const ExamplePage: FC = () => {
 
   const buttonModalLightHandler = () => {
     _modalSetModalRoute("demo");
-    _modalSetBackgroundColor(COLOR_DEF_LIGHT);
+    _modalSetBackgroundColor(COLOR_LIGHT);
     _modalSetVisible(true);
   };
 
   const buttonModalDarkHandler = () => {
     _modalSetModalRoute("demo");
 
-    _modalSetBackgroundColor(COLOR_DEF_DARK);
+    _modalSetBackgroundColor(COLOR_DARK);
     _modalSetVisible(true);
   };
 
   const buttonModalSuccessHandler = () => {
     _modalSetModalRoute("success");
 
-    _modalSetBackgroundColor(COLOR_DEF_SUCCESS);
+    _modalSetBackgroundColor(COLOR_SUCCESS);
     _modalSetVisible(true);
   };
 
   const buttonModalCautionHandler = () => {
     _modalSetModalRoute("demo");
 
-    _modalSetBackgroundColor(COLOR_DEF_CAUTION);
+    _modalSetBackgroundColor(COLOR_CAUTION);
     _modalSetVisible(true);
   };
   const buttonModalDangerHandler = () => {
     _modalSetModalRoute("demo");
 
-    _modalSetBackgroundColor(COLOR_DEF_DANGER);
+    _modalSetBackgroundColor(COLOR_DANGER);
     _modalSetVisible(true);
   };
 
   const buttonModalPrimaryHandler = () => {
     _modalSetModalRoute("demo");
 
-    _modalSetBackgroundColor(COLOR_DEF_PRIMARY);
+    _modalSetBackgroundColor(COLOR_PRIMARY);
     _modalSetVisible(true);
   };
 
   const buttonModalSecondaryHandler = () => {
     _modalSetModalRoute("demo");
 
-    _modalSetBackgroundColor(COLOR_DEF_SECONDARY);
+    _modalSetBackgroundColor(COLOR_SECONDARY);
     _modalSetVisible(true);
   };
 

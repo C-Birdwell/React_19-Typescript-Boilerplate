@@ -4,7 +4,7 @@ button.button {
   -webkit-appearance: none;
   appearance: none;
   display: block;
-  height: 50px;
+  height: $height-button;
   border-radius: $border-radius;
   cursor: pointer;
   border: 2px solid var(--color-text-primary);

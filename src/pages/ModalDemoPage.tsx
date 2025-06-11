@@ -1,4 +1,4 @@
-import { Row, PageTemplate, ModalDemoButton, Card } from "@/components";
+import { Row, PageTemplate, ModalDemoButton, Card, Column } from "@/components";
 import { useActionCreators } from "@/hooks";
 import {
   _modalSetBackgroundColor,
@@ -7,13 +7,13 @@ import {
 } from "@/store";
 
 import {
-  COLOR_DEF_CAUTION,
-  COLOR_DEF_DANGER,
-  COLOR_DEF_DARK,
-  COLOR_DEF_LIGHT,
-  COLOR_DEF_PRIMARY,
-  COLOR_DEF_SECONDARY,
-  COLOR_DEF_SUCCESS,
+  COLOR_CAUTION,
+  COLOR_DANGER,
+  COLOR_DARK,
+  COLOR_LIGHT,
+  COLOR_PRIMARY,
+  COLOR_SECONDARY,
+  COLOR_SUCCESS,
 } from "@/constants";
 
 const actionCreators = {
@@ -28,48 +28,48 @@ export const ModalDemoPage: React.FC = () => {
 
   const buttonModalLightHandler = () => {
     _modalSetModalRoute("demo");
-    _modalSetBackgroundColor(COLOR_DEF_LIGHT);
+    _modalSetBackgroundColor(COLOR_LIGHT);
     _modalSetVisible(true);
   };
 
   const buttonModalDarkHandler = () => {
     _modalSetModalRoute("demo");
 
-    _modalSetBackgroundColor(COLOR_DEF_DARK);
+    _modalSetBackgroundColor(COLOR_DARK);
     _modalSetVisible(true);
   };
 
   const buttonModalSuccessHandler = () => {
     _modalSetModalRoute("success");
 
-    _modalSetBackgroundColor(COLOR_DEF_SUCCESS);
+    _modalSetBackgroundColor(COLOR_SUCCESS);
     _modalSetVisible(true);
   };
 
   const buttonModalCautionHandler = () => {
     _modalSetModalRoute("demo");
 
-    _modalSetBackgroundColor(COLOR_DEF_CAUTION);
+    _modalSetBackgroundColor(COLOR_CAUTION);
     _modalSetVisible(true);
   };
   const buttonModalDangerHandler = () => {
     _modalSetModalRoute("demo");
 
-    _modalSetBackgroundColor(COLOR_DEF_DANGER);
+    _modalSetBackgroundColor(COLOR_DANGER);
     _modalSetVisible(true);
   };
 
   const buttonModalPrimaryHandler = () => {
     _modalSetModalRoute("demo");
 
-    _modalSetBackgroundColor(COLOR_DEF_PRIMARY);
+    _modalSetBackgroundColor(COLOR_PRIMARY);
     _modalSetVisible(true);
   };
 
   const buttonModalSecondaryHandler = () => {
     _modalSetModalRoute("demo");
 
-    _modalSetBackgroundColor(COLOR_DEF_SECONDARY);
+    _modalSetBackgroundColor(COLOR_SECONDARY);
     _modalSetVisible(true);
   };
 
@@ -80,42 +80,49 @@ export const ModalDemoPage: React.FC = () => {
       title="Modal Demo"
       subtitle='A demonstration of the built-in "Modal" pop-up with lightbox feature.'
     >
-      <Card border marginBottom={20} animationSlide="right">
-        <h4 className="center">Light & Dark Examples</h4>
-        <Row parentName={parentClassName}>
-          <ModalDemoButton
-            buttonText="Light Modal"
-            onClick={buttonModalLightHandler}
-            backgroundTheme="light"
-            alignment="left"
-          />
-          <ModalDemoButton
-            buttonText="Dark Modal"
-            onClick={buttonModalDarkHandler}
-            backgroundTheme="dark"
-            alignment="right"
-          />
-        </Row>
-      </Card>
-      <Card border marginBottom={20} animationSlide="left">
-        <h4 className="center">App Theme Primary & Secondary Examples</h4>
+      <Row gutter={10}>
+        <Column>
+          <Card border marginBottom={20} animationSlide="left">
+            <h4 className="center">App Theme Primary & Secondary Examples</h4>
 
-        <Row parentName={parentClassName}>
-          <ModalDemoButton
-            buttonText="Primary Modal"
-            onClick={buttonModalPrimaryHandler}
-            backgroundTheme="primary"
-            alignment="left"
-          />
-          <ModalDemoButton
-            buttonText="Secondary Modal"
-            onClick={buttonModalSecondaryHandler}
-            backgroundTheme="secondary"
-            alignment="right"
-          />
-        </Row>
-      </Card>
-      <Card border animationSlide="right">
+            <Row parentName={parentClassName}>
+              <ModalDemoButton
+                buttonText="Primary Modal"
+                onClick={buttonModalPrimaryHandler}
+                backgroundTheme="primary"
+                alignment="left"
+              />
+              <ModalDemoButton
+                buttonText="Secondary Modal"
+                onClick={buttonModalSecondaryHandler}
+                backgroundTheme="secondary"
+                alignment="right"
+              />
+            </Row>
+          </Card>
+        </Column>
+        <Column>
+          <Card border marginBottom={20} animationSlide="right">
+            <h4 className="center">Light & Dark Examples</h4>
+            <Row parentName={parentClassName}>
+              <ModalDemoButton
+                buttonText="Light Modal"
+                onClick={buttonModalLightHandler}
+                backgroundTheme="light"
+                alignment="left"
+              />
+              <ModalDemoButton
+                buttonText="Dark Modal"
+                onClick={buttonModalDarkHandler}
+                backgroundTheme="dark"
+                alignment="right"
+              />
+            </Row>
+          </Card>
+        </Column>
+      </Row>
+
+      <Card border animationSlide="bottom">
         <h4 className="center">Examples of Status Themes</h4>
         <Row parentName={parentClassName}>
           <ModalDemoButton

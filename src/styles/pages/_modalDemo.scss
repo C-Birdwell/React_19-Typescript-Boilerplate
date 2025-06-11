@@ -2,7 +2,6 @@
 
 div.page--modal-demo {
   &_row {
-    width: 100%;
     margin: 0 auto;
     .button {
       width: 200px;
@@ -10,7 +9,7 @@ div.page--modal-demo {
   }
   div.page_card .card {
     h4 {
-      margin-bottom: $space-l;
+      margin-bottom: $space-xl;
     }
   }
 }

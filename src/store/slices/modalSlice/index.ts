@@ -1,4 +1,4 @@
-import { MODAL_DEF } from "@/constants";
+import { MODAL } from "@/constants";
 import { createSlice } from "@reduxjs/toolkit";
 
 import type { InitialState } from "./index.types";
@@ -10,7 +10,7 @@ const initialState: InitialState = {
 };
 
 const modalSlice = createSlice({
-  name: MODAL_DEF,
+  name: MODAL,
   initialState,
   reducers: {
     _modalSetVisible: (state, action) => {

@@ -1,3 +1,3 @@
-import type { ParentClassName } from "@/lib";
+import type { ParentClassName, OnDismiss } from "@/lib";
 
-export type LogoProps = ParentClassName;
+export type LogoProps = OnDismiss & ParentClassName;

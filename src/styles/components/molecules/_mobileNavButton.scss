@@ -1,0 +1,70 @@
+@use "../../abstracts" as *;
+
+.mobile-nav_button {
+  position: relative;
+  width: $height-button;
+  height: $height-button;
+  padding: $space-xs;
+  box-sizing: border-box;
+  border-width: 0px;
+  background-color: var(--color-background-secondary);
+  border-radius: $border-radius;
+  cursor: pointer;
+  transform: rotateY(180deg);
+  transition: background-color $speed-050;
+  &_bar {
+    height: 5px;
+    width: 40px;
+    left: $space-xs;
+    position: absolute;
+    background-color: var(--color-primary);
+    border-radius: 50px;
+    transition: opacity $speed-025, transform $speed-075, top $speed-025,
+      bottom $speed-025, background-color $speed-050;
+  }
+  &--closed {
+    .mobile-nav_button_bar {
+      &--1 {
+        top: 0px;
+        transform: rotateY(0deg) rotate(0deg) translateY(10px);
+      }
+      &--2 {
+        top: 25px;
+        transform: translateY(-2px);
+        opacity: 1;
+      }
+      &--3 {
+        bottom: 0px;
+        transform: rotateY(0deg) rotate(0deg) translateY(-10px);
+      }
+    }
+  }
+  &--open {
+    background-color: $color-danger;
+    .mobile-nav_button {
+      &_bar {
+        background-color: #fff;
+        &--1 {
+          top: 20px;
+          transform: rotateY(-180deg) rotate(-45deg) translateY(2px)
+            translateX(-2.5px);
+        }
+        &--2 {
+          opacity: 0;
+        }
+        &--3 {
+          bottom: 25px;
+          transform: rotateY(-180deg) rotate(45deg) translateY(2px)
+            translateX(2.5px);
+        }
+      }
+    }
+  }
+}
+.backdrop--mobile {
+  height: 100%;
+  position: absolute;
+  top: 0;
+  z-index: $z-mobile;
+  background-color: rgba(var(--color-background-rgb), 0.8);
+}

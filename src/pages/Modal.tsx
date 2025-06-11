@@ -1,7 +1,7 @@
 import { useState, type FC } from "react";
 
 import { Backdrop, ModalTemplate } from "@/components";
-import { useAppSelector, useActionCreators } from "@/hooks";
+import { useStoreSelector, useActionCreators } from "@/hooks";
 import { modalRoutes } from "@/routes";
 
 //import type { ModalProps } from "./index.types";
@@ -10,7 +10,7 @@ import { _modalReset, type RootState } from "@/store";
 const actionCreators = { _modalReset };
 
 export const Modal: FC = () => {
-  const { visible, backgroundTheme, modalRoute } = useAppSelector(
+  const { visible, backgroundTheme, modalRoute } = useStoreSelector(
     (state: RootState) => state.modal
   );
   const { _modalReset } = useActionCreators(actionCreators);

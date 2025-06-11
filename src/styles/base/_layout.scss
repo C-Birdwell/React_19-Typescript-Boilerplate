@@ -44,3 +44,16 @@ div.column {
     flex: $i;
   }
 }
+
+@for $i from 1 through 40 {
+  .row--gutter-#{$i} .column {
+    margin-left: #{$i}px;
+    margin-right: #{$i}px;
+    &:first-child {
+      margin-left: 0px;
+    }
+    &:last-child {
+      margin-right: 0px;
+    }
+  }
+}

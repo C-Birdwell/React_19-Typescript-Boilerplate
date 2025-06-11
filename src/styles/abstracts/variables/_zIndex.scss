@@ -1,8 +1,10 @@
-$z-floor: 0;
-$z-above: 1;
-$z-level-1: 100;
+$floor: 0;
+$above: 1;
+$level-1: 100;
 
-$z-base: $z-floor + $z-above;
-$z-header: $z-base + $z-above;
+$z-base: $floor + $above;
+$z-card: $z-base + $above;
+$z-mobile: $z-card + $above;
+$z-header: $z-mobile + $above;
 
-$z-modal: $z-level-1 + $z-floor;
+$z-modal: $level-1 + $floor;

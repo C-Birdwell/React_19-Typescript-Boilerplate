@@ -1,5 +1,4 @@
-import { useNavigate } from "react-router-dom";
-import { Link } from "react-router";
+import { useNavigate, Link } from "react-router-dom";
 
 import { Button } from "@/components";
 import type { NavLinkProps } from "./index.types";
@@ -9,14 +8,20 @@ export const NavLink: React.FC<NavLinkProps> = ({
   targetText,
   type = "text",
   backgroundTheme = "primary",
+  onDismiss,
 }) => {
   const navigate = useNavigate();
 
   const navigateHandler = () => {
     navigate(`/${target}`);
+    onDismiss?.();
   };
 
-  const navLink = <Link to={target}>{targetText}</Link>;
+  const navLink = (
+    <Link to={target} onClick={onDismiss}>
+      {targetText}
+    </Link>
+  );
   const navButton = (
     <Button
       buttonText={targetText}

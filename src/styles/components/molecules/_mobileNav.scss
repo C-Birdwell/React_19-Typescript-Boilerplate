@@ -1,0 +1,35 @@
+@use "../../abstracts/" as *;
+
+.mobile-nav {
+  &_container {
+    height: 100%;
+    width: 66%;
+    background-color: var(--color-background-primary);
+    border: 2px solid var(--color-primary);
+    border-right-width: 0px;
+    border-top-width: 0px;
+    border-bottom-left-radius: $border-radius;
+    position: fixed;
+    right: 0;
+    top: 0;
+    z-index: $z-mobile;
+
+    @include animate-width-grow(66%, $speed-025);
+    &_navbar {
+      height: 100%;
+      width: 100%;
+      flex-direction: column;
+      padding-top: $height-header;
+      a {
+        display: flex;
+        height: $height-button;
+        background-color: var(--color-background-secondary);
+        border: 2px solid var(--color-primary);
+        border-radius: $border-radius;
+        width: 95%;
+        justify-content: center;
+        align-items: center;
+      }
+    }
+  }
+}

@@ -1,2 +1,3 @@
 export * from "./useActionCreators";
-export * from "./useAppSelector";
+export * from "./useStoreSelector";
+export * from "./useWindowDimensions";

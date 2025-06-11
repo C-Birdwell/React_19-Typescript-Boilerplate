@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-import { EXAMPLE_DEF } from "@/constants";
+import { EXAMPLE } from "@/constants";
 
 import type { InitialState } from "./index.types";
 
@@ -10,7 +10,7 @@ const initialState: InitialState = {
 };
 
 const exampleSlice = createSlice({
-  name: EXAMPLE_DEF,
+  name: EXAMPLE,
   initialState,
   reducers: {
     _exampleSetFoo: (state, action) => {

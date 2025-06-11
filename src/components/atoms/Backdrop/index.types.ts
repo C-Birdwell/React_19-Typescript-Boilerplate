@@ -1,7 +1,11 @@
-import type { ClassName, PropChildren, BackgroundTheme } from "@/lib";
+import type {
+  ClassName,
+  PropChildren,
+  BackgroundTheme,
+  OnDismiss,
+} from "@/lib";
 
-export type BackdropProps = {
-  onDismiss?: () => void;
-} & ClassName &
+export type BackdropProps = OnDismiss &
+  ClassName &
   PropChildren &
   BackgroundTheme;

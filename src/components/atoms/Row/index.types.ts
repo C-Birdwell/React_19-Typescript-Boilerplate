@@ -1,3 +1,4 @@
+import type { ThemeSizeTypes } from "@/constants";
 import type {
   ClassNamesList,
   PropChildren,
@@ -5,7 +6,9 @@ import type {
   ClassName,
 } from "@/lib";
 
-export type RowProps = ParentClassName &
+export type RowProps = {
+  gutter?: (typeof ThemeSizeTypes)[number];
+} & ParentClassName &
   ClassName &
   ClassNamesList &
   PropChildren &

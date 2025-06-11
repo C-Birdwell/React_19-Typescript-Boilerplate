@@ -6,6 +6,8 @@ This boilerplate was created by **Colin Andrew Birdwell** for personal and profe
 - React 19.1
 - Built with Vite using react-ts
 
+View a live version of this project on [Github Pages](https://c-birdwell.github.io/React_19-Typescript-Boilerplate)
+
 ## :electric_plug: Integrated Features
 
 - Redux

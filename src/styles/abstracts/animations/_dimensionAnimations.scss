@@ -1,0 +1,14 @@
+@use "./animate" as animate;
+
+@mixin animate-width-grow($width, $duration) {
+  @include animate.animate(animate-width-growth, $duration, linear, 1);
+
+  @include animate.keyframes(animate-width-growth) {
+    from {
+      width: 0;
+    }
+    to {
+      width: $width;
+    }
+  }
+}

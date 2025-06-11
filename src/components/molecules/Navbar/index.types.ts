@@ -1,4 +1,4 @@
-import type { NavLinkProps } from "@/components/index.types";
-import type { ClassName } from "@/lib";
+import type { NavLinksDataProps } from "@/components/index.types";
+import type { ParentClassName, OnDismiss } from "@/lib";
 
-export type NavbarProps = { links: NavLinkProps[] } & ClassName;
+export type NavbarProps = OnDismiss & NavLinksDataProps & ParentClassName;

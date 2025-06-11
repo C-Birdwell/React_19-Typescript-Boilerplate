@@ -43,9 +43,24 @@
 }
 
 @mixin animate-slide_top-vertical($amount, $duration) {
-  @include animate.animate(animate-slide_top-horizontal, $duration, linear, 1);
+  @include animate.animate(animate-slide_top-vertical, $duration, linear, 1);
 
-  @include animate.keyframes(animate-slide_top-horizontal) {
+  @include animate.keyframes(animate-slide_top-vertical) {
+    from {
+      opacity: 0;
+      transform: translateY($amount);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
+
+@mixin animate-slide_bottom-vertical($amount, $duration) {
+  @include animate.animate(animate-slide_bottom-vertical, $duration, linear, 1);
+
+  @include animate.keyframes(animate-slide_bottom-vertical) {
     from {
       opacity: 0;
       transform: translateY($amount);

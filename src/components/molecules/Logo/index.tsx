@@ -3,7 +3,7 @@ import type { LogoProps } from "./index.types";
 import { logo } from "@/assets";
 import { URL_HOME } from "@/constants";
 
-export const Logo: React.FC<LogoProps> = () => {
+export const Logo: React.FC<LogoProps> = ({ onDismiss }) => {
   const envTitle = import.meta.env.VITE_API_TITLE;
   const navigate = useNavigate();
   const navigateHandler = () => {
@@ -11,7 +11,7 @@ export const Logo: React.FC<LogoProps> = () => {
   };
 
   return (
-    <div className="logo">
+    <div className="logo" onClick={onDismiss}>
       <img onClick={navigateHandler} src={logo} alt={`Logo for ${envTitle}.`} />
     </div>
   );

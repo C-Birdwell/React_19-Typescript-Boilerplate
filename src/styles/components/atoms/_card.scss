@@ -6,7 +6,8 @@ div.card {
   box-sizing: border-box;
   overflow: hidden;
   padding: $space-l;
-
+  position: relative;
+  z-index: $z-card;
   &--border {
     border: 2px solid var(--color-text-primary);
   }
@@ -15,5 +16,8 @@ div.card {
   }
   &--right {
     @include animate-slide_in-right(100vw, $speed-050);
+  }
+  &--bottom {
+    @include animate-slide_bottom-vertical(50vh, $speed-050);
   }
 }

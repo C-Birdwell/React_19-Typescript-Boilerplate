@@ -1,12 +1,13 @@
 import { configureStore } from "@reduxjs/toolkit";
 
-import { EXAMPLE_DEF, MODAL_DEF } from "@/constants";
-import { exampleReducer, modalReducer } from "./slices";
+import { EXAMPLE, INTERFACE, MODAL } from "@/constants";
+import { exampleReducer, interfaceReducer, modalReducer } from "./slices";
 
 export const store = configureStore({
   reducer: {
-    [EXAMPLE_DEF]: exampleReducer,
-    [MODAL_DEF]: modalReducer,
+    [INTERFACE]: interfaceReducer,
+    [EXAMPLE]: exampleReducer,
+    [MODAL]: modalReducer,
     // [apiSlice.reducerPath]: apiSlice.reducer
   },
   devTools: true,

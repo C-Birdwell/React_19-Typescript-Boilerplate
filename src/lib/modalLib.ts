@@ -1,12 +1,11 @@
-import type { ActionType } from "./actionsLib";
+import type { ActionType, OnDismiss } from "./index";
 
 export type ModalNavigation = {
   modalIndex: number;
   modalIndexLength: number;
   onNext: () => void;
   onPrev: () => void;
-  onDismiss: () => void;
-};
+} & OnDismiss;
 
 export type ModalRoute = {
   title: string;
