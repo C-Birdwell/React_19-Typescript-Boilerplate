@@ -41,7 +41,7 @@ export const Header: FC<HeaderProps> = ({ className }) => {
               <Navbar
                 links={linksArray}
                 parentName={className}
-                onDismiss={null}
+                onDismiss={() => {}}
               />
             ) : (
               <MobileNavButton onPress={clickHandler} isActive={isActive} />

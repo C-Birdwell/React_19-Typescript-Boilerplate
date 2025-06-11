@@ -19,6 +19,7 @@ const createLinkItem = (
   targetText,
   type,
   backgroundTheme,
+  onDismiss: () => {},
 });
 const homeLink = createLinkItem(URL_HOME, TITLE_HOME);
 const modalLink = createLinkItem(URL_MODALS, TITLE_MODALS);
