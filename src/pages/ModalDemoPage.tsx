@@ -80,12 +80,12 @@ export const ModalDemoPage: React.FC = () => {
       title="Modal Demo"
       subtitle='A demonstration of the built-in "Modal" pop-up with lightbox feature.'
     >
-      <Row gutter={10}>
+      <Row gutter={10} breakPoint="tablet">
         <Column>
           <Card border marginBottom={20} animationSlide="left">
-            <h4 className="center">App Theme Primary & Secondary Examples</h4>
+            <h4 className="center">App Theme Examples</h4>
 
-            <Row parentName={parentClassName}>
+            <Row parentName={parentClassName} breakPoint="mobile">
               <ModalDemoButton
                 buttonText="Primary Modal"
                 onClick={buttonModalPrimaryHandler}
@@ -104,7 +104,7 @@ export const ModalDemoPage: React.FC = () => {
         <Column>
           <Card border marginBottom={20} animationSlide="right">
             <h4 className="center">Light & Dark Examples</h4>
-            <Row parentName={parentClassName}>
+            <Row parentName={parentClassName} breakPoint="mobile">
               <ModalDemoButton
                 buttonText="Light Modal"
                 onClick={buttonModalLightHandler}
@@ -124,7 +124,7 @@ export const ModalDemoPage: React.FC = () => {
 
       <Card border animationSlide="bottom">
         <h4 className="center">Examples of Status Themes</h4>
-        <Row parentName={parentClassName}>
+        <Row parentName={parentClassName} breakPoint="mobile">
           <ModalDemoButton
             buttonText="Success Modal"
             onClick={buttonModalSuccessHandler}

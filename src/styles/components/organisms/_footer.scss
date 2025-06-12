@@ -20,5 +20,10 @@ footer.footer {
     .button {
       width: 200px;
     }
+    @media only screen and (max-width: $breakpoint-tablet) {
+      & {
+        width: 100%;
+      }
+    }
   }
 }

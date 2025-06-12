@@ -8,6 +8,7 @@ div.card {
   padding: $space-l;
   position: relative;
   z-index: $z-card;
+  max-width: 100%;
   &--border {
     border: 2px solid var(--color-text-primary);
   }

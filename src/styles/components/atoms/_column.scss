@@ -1,12 +1,4 @@
-div.row {
-  box-sizing: border-box;
-  background-color: transparent;
-  display: flex;
-  flex: 1;
-  flex-direction: row;
-  height: 100%;
-  width: 100%;
-}
+@use "../../abstracts" as *;
 
 div.column {
   box-sizing: border-box;
@@ -15,6 +7,8 @@ div.column {
   flex: 1;
   flex-direction: column;
   height: 100%;
+  width: 100%;
+  max-width: 100%;
   &--justify {
     &-start {
       justify-content: flex-start;
@@ -42,18 +36,5 @@ div.column {
 @for $i from 1 through 100 {
   div.column--#{$i} {
     flex: $i;
-  }
-}
-
-@for $i from 1 through 40 {
-  .row--gutter-#{$i} .column {
-    margin-left: #{$i}px;
-    margin-right: #{$i}px;
-    &:first-child {
-      margin-left: 0px;
-    }
-    &:last-child {
-      margin-right: 0px;
-    }
   }
 }

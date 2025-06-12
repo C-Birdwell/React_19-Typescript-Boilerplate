@@ -6,16 +6,17 @@ export const Row: React.FC<RowProps> = ({
   className = "",
   classNames = [],
   gutter = 0,
+  breakPoint = "",
   children,
   ...rest
 }) => {
-  const gutterSize = gutter > 0 ? `gutter-${gutter}` : "";
-
-  const rowClassName = `${setClassNames(
-    "row",
-    parentName,
-    classNames.concat(gutterSize)
-  )}${className ? " " + className : ""}`;
+  const gutterSize = gutter > 0 ? [`gutter--${gutter}`, "gutter"] : "";
+  const breakClass = breakPoint ? `breakpoint--${breakPoint}` : breakPoint;
+  const rowClassName = `${setClassNames("row", parentName, [
+    ...classNames,
+    ...gutterSize,
+    breakClass,
+  ])}${className ? " " + className : ""}`;
 
   return (
     <div className={rowClassName} {...rest}>

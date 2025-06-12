@@ -5,6 +5,21 @@ export const SIZE_L = 20;
 export const SIZE_XL = 40;
 export const SIZE_XXL = 80;
 
+// "laptop" | "tablet" | "mobile" | "";
+
+export const SCREEN_DESKTOP = "desktop";
+export const SCREEN_LAPTOP = "laptop";
+export const SCREEN_TABLET = "tablet";
+export const SCREEN_MOBILE = "mobile";
+
+export const ThemeScreenSizesTypes = [
+  SCREEN_DESKTOP,
+  SCREEN_LAPTOP,
+  SCREEN_TABLET,
+  SCREEN_MOBILE,
+  "",
+] as const;
+
 export const ThemeSizeTypes = [
   SIZE_XS,
   SIZE_S,
@@ -15,5 +30,5 @@ export const ThemeSizeTypes = [
   0,
 ] as const;
 
-export const BREAKPOINT_TABLET = 1024;
-export const BREAKPOINT_PHONE = 768;
+export const BREAKPOINT_TABLET = 1050;
+export const BREAKPOINT_PHONE = 770;

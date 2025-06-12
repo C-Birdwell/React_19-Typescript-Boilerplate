@@ -1,0 +1,111 @@
+@use "../../abstracts" as *;
+
+div.row {
+  box-sizing: border-box;
+  background-color: transparent;
+  display: flex;
+  flex: 1;
+  flex-direction: row;
+  height: 100%;
+  width: 100%;
+  max-width: 100%;
+  @media only screen and (max-width: $breakpoint-tablet) {
+    &--breakpoint--tablet {
+      flex-direction: column;
+    }
+  }
+  @media only screen and (max-width: $breakpoint-mobile) {
+    &--breakpoint--mobile {
+      flex-direction: column;
+    }
+  }
+}
+
+@for $i from 1 through 40 {
+  .row--gutter--#{$i} .column {
+    margin-left: #{$i}px;
+    margin-right: #{$i}px;
+    &:first-child {
+      margin-left: 0px;
+    }
+    &:last-child {
+      margin-right: 0px;
+    }
+  }
+}
+
+.row--breakpoint {
+  &--tablet {
+    .column {
+      @media only screen and (max-width: $breakpoint-tablet) {
+        &--align {
+          &-start {
+            align-items: center;
+          }
+
+          &-end {
+            align-items: center;
+          }
+        }
+      }
+    }
+  }
+  &--mobile {
+    .column {
+      @media only screen and (max-width: $breakpoint-mobile) {
+        &--align {
+          &-start {
+            align-items: center;
+          }
+
+          &-end {
+            align-items: center;
+          }
+        }
+      }
+    }
+  }
+}
+
+.row--gutter.row--breakpoint {
+  &--tablet {
+    .column {
+      &:first-child {
+        margin-left: 0px;
+        @media only screen and (max-width: $breakpoint-tablet) {
+          & {
+            margin: 0;
+          }
+        }
+      }
+      &:last-child {
+        margin-right: 0px;
+        @media only screen and (max-width: $breakpoint-tablet) {
+          & {
+            margin: 0;
+          }
+        }
+      }
+    }
+  }
+  &--mobile {
+    .column {
+      &:first-child {
+        margin-left: 0px;
+        @media only screen and (max-width: $breakpoint-mobile) {
+          & {
+            margin: 0;
+          }
+        }
+      }
+      &:last-child {
+        margin-right: 0px;
+        @media only screen and (max-width: $breakpoint-mobile) {
+          & {
+            margin: 0;
+          }
+        }
+      }
+    }
+  }
+}
