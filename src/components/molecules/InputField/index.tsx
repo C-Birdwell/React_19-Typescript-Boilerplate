@@ -9,6 +9,7 @@ export const InputField: React.FC<InputFieldProps> = ({
   value,
   labelText,
   onUpdate,
+  placeholder,
 }) => {
   return (
     <div
@@ -23,6 +24,7 @@ export const InputField: React.FC<InputFieldProps> = ({
         value={value}
         onUpdate={onUpdate}
         disabled={disabled}
+        placeholder={placeholder}
       />
     </div>
   );

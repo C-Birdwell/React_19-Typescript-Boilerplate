@@ -21,10 +21,10 @@ export const modalRoutes = (selection: string): ModalRoute[] => {
   });
 
   const slidesArray1 = [
-    createSlide("Welcome to Demo 1", <DemoSlideA />, "demo-1-a", null),
-    createSlide("The Second Slide of Demo 1", <DemoSlideB />, "demo-1-b", null),
-    createSlide("SLIDE III of Demo 1", <DemoSlideC />, "demo-1-c", null),
-    createSlide("The Last SLide of Demo 1", <DemoSlideD />, "demo-1-d", null),
+    createSlide("Example Slide One", <DemoSlideA />, "demo-1-a", null),
+    createSlide("The Second Slide", <DemoSlideB />, "demo-1-b", null),
+    createSlide("SLIDE III", <DemoSlideC />, "demo-1-c", null),
+    createSlide("Last Slide", <DemoSlideD />, "demo-1-d", null),
   ];
 
   const customActionSuccess: ActionType[] = [

@@ -14,6 +14,7 @@ View a live version of this project on [Github Pages](https://c-birdwell.github.
 - Redux Toolkit
 - React Router
 - SaSS
+- Github Pages deployment capabilities
 
 ## :hammer: Running Locally
 

@@ -21,4 +21,8 @@ div.card {
   &--bottom {
     @include animate-slide_bottom-vertical(50vh, $speed-050);
   }
+
+  h4 {
+    margin-bottom: $space-m;
+  }
 }

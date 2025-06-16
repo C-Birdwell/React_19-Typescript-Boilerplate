@@ -1,3 +1,4 @@
 import type { InputProps, LabelProps } from "../../atoms/index.types";
 
-export type InputFieldProps = InputProps & LabelProps;
+export type InputFieldProps = { placeholder?: string } & InputProps &
+  LabelProps;

@@ -6,6 +6,7 @@ export const Input: React.FC<InputProps> = ({
   type,
   value,
   onUpdate,
+  placeholder,
   ...rest
 }) => {
   return (
@@ -16,6 +17,7 @@ export const Input: React.FC<InputProps> = ({
       onChange={onUpdate}
       name={name}
       id={name}
+      placeholder={placeholder}
       {...rest}
     />
   );

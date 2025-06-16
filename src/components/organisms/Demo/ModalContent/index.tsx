@@ -1,7 +1,7 @@
 export const DemoSlideA: React.FC = () => {
   return (
     <>
-      <h4>This is the first Demo Slide</h4>
+      <h4>First Demo Slide</h4>
       <p>The next slide will have more content</p>
     </>
   );
@@ -10,7 +10,7 @@ export const DemoSlideA: React.FC = () => {
 export const DemoSlideB: React.FC = () => {
   return (
     <>
-      <h4>This is the second Demo Slide</h4>
+      <h4>Second Demo Slide</h4>
       <p>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam et lacus
         fringilla, lobortis tellus vel, posuere erat. Donec purus diam, ornare
@@ -78,7 +78,7 @@ export const DemoSlideB: React.FC = () => {
 export const DemoSlideC: React.FC = () => {
   return (
     <>
-      <h4>This is the third Demo Slide</h4>
+      <h4>Third Demo Slide</h4>
       <p>
         <b>Lorem ipsum dolor sit amet,</b> consectetur adipiscing elit. Nullam
         et lacus fringilla, lobortis tellus vel, posuere erat. Donec purus diam,
@@ -107,7 +107,7 @@ export const DemoSlideC: React.FC = () => {
 export const DemoSlideD: React.FC = () => {
   return (
     <>
-      <h4>This is the fourth Demo Slide</h4>
+      <h4>Fourth Demo Slide</h4>
       <p>There isn't anything special about this slide.</p>
     </>
   );

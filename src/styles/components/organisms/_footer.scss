@@ -19,6 +19,11 @@ footer.footer {
     overflow: hidden;
     .button {
       width: 200px;
+      @media only screen and (max-width: $breakpoint-mobile) {
+        & {
+          width: 150px;
+        }
+      }
     }
     @media only screen and (max-width: $breakpoint-tablet) {
       & {

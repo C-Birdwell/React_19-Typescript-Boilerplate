@@ -43,3 +43,11 @@ body,
   background-color: var(--color-background-primary);
   overflow-x: hidden;
 }
+
+p {
+  margin: 0 0 $space-s 0;
+}
+
+span.bold {
+  font-weight: 700;
+}
