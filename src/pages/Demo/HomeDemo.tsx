@@ -2,7 +2,7 @@ import { Card, Row, Column } from "@/components";
 
 export const HomeDemo: React.FC = () => {
   return (
-    <Row gutter={10}>
+    <Row gutter={10} breakPoint="mobile">
       <Column size={3}>
         <Card border animationSlide="left" marginBottom={20}>
           <h4>Greetings</h4>
