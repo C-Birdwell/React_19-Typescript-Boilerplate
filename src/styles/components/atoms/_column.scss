@@ -6,7 +6,7 @@ div.column {
   display: flex;
   flex: 1;
   flex-direction: column;
-  height: 100%;
+  height: auto;
   width: 100%;
   max-width: 100%;
   &--justify {

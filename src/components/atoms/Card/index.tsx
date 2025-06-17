@@ -6,7 +6,7 @@ export const Card: React.FC<CardProps> = ({
   children,
   classNames = [],
   parentName,
-  marginBottom = 0,
+  marginBottom = 20,
   animationSlide = "",
   ...rest
 }) => {

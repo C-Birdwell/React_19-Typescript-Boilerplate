@@ -1,0 +1,16 @@
+@use "../abstracts" as *;
+
+p {
+  margin: 0 0 $space-xs 0;
+  line-height: 1.55;
+}
+
+.bold {
+  font-weight: 700;
+}
+
+.color {
+  &--primary {
+    color: var(--color-primary);
+  }
+}

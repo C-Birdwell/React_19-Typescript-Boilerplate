@@ -122,7 +122,7 @@ export const ModalDemoPage: React.FC = () => {
         </Column>
       </Row>
 
-      <Card border animationSlide="bottom">
+      <Card border animationSlide="bottom" marginBottom={20}>
         <h4 className="center">Examples of Status Themes</h4>
         <Row parentName={parentClassName} breakPoint="mobile">
           <ModalDemoButton
