@@ -9,6 +9,7 @@ export const Button: React.FC<ButtonProps> = ({
   parentName = "",
   className = "",
   backgroundTheme,
+  marginBottom = 0,
 }) => {
   const buttonClassNames = setClassNames("button", parentName, [
     className,
@@ -16,7 +17,12 @@ export const Button: React.FC<ButtonProps> = ({
     backgroundTheme,
   ]);
   return (
-    <button onClick={onClick} disabled={disabled} className={buttonClassNames}>
+    <button
+      onClick={onClick}
+      disabled={disabled}
+      className={buttonClassNames}
+      style={{ marginBottom: marginBottom }}
+    >
       {buttonText}
       {children}
     </button>

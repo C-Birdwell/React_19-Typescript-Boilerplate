@@ -1,6 +1,18 @@
-import { Card, Row, Column } from "@/components";
+import { Card, Row, Column, Button } from "@/components";
 
 export const HomeDemo: React.FC = () => {
+  const hyperLinkCreator = (destination: string) => {
+    window.open(destination, "_blank");
+  };
+
+  const githubLinkHandler = () =>
+    hyperLinkCreator(
+      "https://github.com/C-Birdwell/React_19-Typescript-Boilerplate"
+    );
+  const pagesLinkHandler = () =>
+    hyperLinkCreator(
+      "https:c-birdwell.github.io/React_19-Typescript-Boilerplate/"
+    );
   return (
     <Row gutter={10} breakPoint="mobile">
       <Column size={3}>
@@ -44,18 +56,33 @@ export const HomeDemo: React.FC = () => {
             but also the actual layout of DOM elements.
           </p>
           <p>
-            Out of the box the boilerplate has Typescript, Redux Toolkit, SaSS,
-            React Router, environment files, and Github Pages deployment
-            capabilities setup.
+            This approach is achieved by adopting Atomic Design principles in
+            the folder structure of the application. In the front-end the DOM is
+            assembled by a combination of display grid, rows, column, and a card
+            layout.
           </p>
           <p>
-            It's built without any frontend style frameworks such as Bootstrap
-            or Tailwind but can incorporate them if so desired.
+            By adhering to the establish patterns technical debt can be
+            addressed head on instead of being postponed.
           </p>
         </Card>
       </Column>
       <Column>
-        <Card border></Card>
+        <Card border>
+          <h4>Documentation & Links</h4>
+          <Button
+            onClick={() => githubLinkHandler()}
+            buttonText="Github Repository Link"
+            backgroundTheme="primary"
+            marginBottom={20}
+          />
+          <Button
+            onClick={() => pagesLinkHandler()}
+            buttonText="Github Pages Link"
+            backgroundTheme="secondary"
+            marginBottom={20}
+          />
+        </Card>
       </Column>
     </Row>
   );

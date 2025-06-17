@@ -12,6 +12,7 @@ div.card {
   position: relative;
   z-index: $z-card;
   max-width: 100%;
+  min-height: fit-content;
   &--border {
     border: 2px solid var(--color-text-primary);
   }

@@ -3,15 +3,14 @@ import type {
   PropsSpreadOperator,
   ClassNamesList,
   ParentClassName,
+  MarginBottom,
 } from "@/lib";
-
-import { ThemeSizeTypes } from "@/constants";
 
 export type CardProps = {
   border?: boolean;
   animationSlide?: "left" | "right" | "top" | "bottom" | "";
-  marginBottom?: (typeof ThemeSizeTypes)[number];
 } & PropChildren &
   PropsSpreadOperator &
   ClassNamesList &
+  MarginBottom &
   ParentClassName;
