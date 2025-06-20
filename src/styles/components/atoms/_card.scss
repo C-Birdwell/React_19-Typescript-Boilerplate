@@ -26,7 +26,30 @@ div.card {
     @include animate-slide_bottom-vertical(50vh, $speed-050);
   }
 
+  &--top {
+    @include animate-slide_top-vertical(50vh, $speed-050);
+  }
+
+  &--fadein {
+    @include animate-fade-in($speed-050);
+  }
+
   h4 {
     margin-bottom: $space-m;
+  }
+
+  &--gradient {
+    &--primary {
+      @include linear-gradient(
+        var(--color-background-primary),
+        var(--color-primary)
+      );
+    }
+    &--background {
+      @include linear-gradient(
+        var(--color-background-primary),
+        var(--color-background-secondary)
+      );
+    }
   }
 }

@@ -25,3 +25,8 @@
     }
   }
 }
+
+@mixin linear-gradient($color-start, $color-end, $direction: to bottom) {
+  background: $color-start;
+  background: linear-gradient($direction, $color-start, $color-end);
+}
