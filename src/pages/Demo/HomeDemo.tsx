@@ -69,7 +69,7 @@ export const HomeDemo: React.FC = () => {
   );
 
   const columnRightOne = (
-    <Card border classNames={["gradient--background", "bottom"]}>
+    <Card border classNames={["gradient--background"]} animationSlide="bottom">
       <h4>Documentation & Links</h4>
       <Button
         onClick={() => githubLinkHandler()}
@@ -93,7 +93,7 @@ export const HomeDemo: React.FC = () => {
   );
 
   const rowOne = (
-    <Row gutter={10} breakPoint="mobile">
+    <Row gutter={10} breakPoint="tablet">
       <Column size={3}>{columnLeftOne}</Column>
       <Column>{columnRightOne}</Column>
     </Row>
@@ -167,6 +167,74 @@ export const HomeDemo: React.FC = () => {
     </Card>
   );
 
+  const columnLeftThree = (
+    <Card border animationSlide="left" marginBottom={20}>
+      <h4>Atomic Design</h4>
+      <p>
+        The src folder contains all the source files that makes each{" "}
+        <span className="bold color--primary">React</span> application unique.
+      </p>
+      <p>
+        From a high level perspective the application is assembled by creating
+        components placed into folders categorized by their complexity
+        determined by Atomic Design principles.
+      </p>
+      <p>
+        Navigation between web pages is facilitated by React Router. These are
+        separated out by the judgement of the developer (most likely based on
+        the needs of the project). These files are found in the pages folder.
+      </p>
+      <p>
+        The pages are then given url designations in React Router which is
+        located in the routes folder. PagesRoutes.tsx houses the actual pages
+        while AppRoute wraps around every major component so they have access to
+        URL navigation functionality.
+      </p>
+      <p>
+        AppRoute is then exported as a component to be wrapped by the Provider
+        from Redux.
+      </p>
+      <p>
+        App is then imported into main.tsx which the application has a root
+        created for it to be attached to a DOM element with the id of "root".
+      </p>
+    </Card>
+  );
+
+  const columnRightThree = (
+    <Card border animationSlide="top" marginBottom={20}>
+      <h4>State Management</h4>
+      <p>
+        The src folder contains all the source files that makes each{" "}
+        <span className="bold color--primary">React</span> application unique.
+      </p>
+      <p>
+        From a high level perspective the application is assembled by creating
+        components placed into folders categorized by their complexity
+        determined by Atomic Design principles.
+      </p>
+      <p>
+        Navigation between web pages is facilitated by React Router. These are
+        separated out by the judgement of the developer (most likely based on
+        the needs of the project). These files are found in the pages folder.
+      </p>
+      <p>
+        The pages are then given url designations in React Router which is
+        located in the routes folder. PagesRoutes.tsx houses the actual pages
+        while AppRoute wraps around every major component so they have access to
+        URL navigation functionality.
+      </p>
+      <p>
+        AppRoute is then exported as a component to be wrapped by the Provider
+        from Redux.
+      </p>
+      <p>
+        App is then imported into main.tsx which the application has a root
+        created for it to be attached to a DOM element with the id of "root".
+      </p>
+    </Card>
+  );
+
   const rowTwo = (
     <Row gutter={10} breakPoint="mobile">
       <Column>{columnLeftTwo}</Column>
@@ -174,10 +242,18 @@ export const HomeDemo: React.FC = () => {
     </Row>
   );
 
+  const rowThree = (
+    <Row gutter={10} breakPoint="mobile">
+      <Column>{columnLeftThree}</Column>
+      <Column>{columnRightThree}</Column>
+    </Row>
+  );
+
   return (
     <>
       {rowOne}
       {rowTwo}
+      {rowThree}
     </>
   );
 };

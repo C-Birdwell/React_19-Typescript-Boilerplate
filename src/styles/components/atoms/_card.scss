@@ -16,22 +16,25 @@ div.card {
   &--border {
     border: 2px solid var(--color-text-primary);
   }
-  &--left {
-    @include animate-slide_in-left(100vw, $speed-050);
-  }
-  &--right {
-    @include animate-slide_in-right(100vw, $speed-050);
-  }
-  &--bottom {
-    @include animate-slide_bottom-vertical(50vh, $speed-050);
-  }
 
-  &--top {
-    @include animate-slide_top-vertical(50vh, $speed-050);
-  }
+  &--in-view.card--animation {
+    &--left {
+      @include animate-slide_in-left(100vw, $speed-050);
+    }
+    &--right {
+      @include animate-slide_in-right(100vw, $speed-050);
+    }
+    &--bottom {
+      @include animate-slide_bottom-vertical(50vh, $speed-050);
+    }
 
-  &--fadein {
-    @include animate-fade-in($speed-050);
+    &--top {
+      @include animate-slide_top-vertical(50vh, $speed-050);
+    }
+
+    &--fadein {
+      @include animate-fade-in($speed-050);
+    }
   }
 
   h4 {
