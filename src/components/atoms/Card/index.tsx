@@ -1,4 +1,4 @@
-import { useState, type FC } from "react";
+import { type FC } from "react";
 import { useInView } from "react-intersection-observer";
 import { setClassNames } from "@/utils";
 import type { CardProps } from "./index.types";
