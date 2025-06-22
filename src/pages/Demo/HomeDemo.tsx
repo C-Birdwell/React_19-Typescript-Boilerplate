@@ -61,6 +61,9 @@ export const HomeDemo: React.FC = () => {
           layout.
         </p>
         <p>
+          Arrow functions are exported by index pages found in every folder.
+        </p>
+        <p>
           By adhering to the establish patterns technical debt can be addressed
           head on instead of being postponed.
         </p>
@@ -171,32 +174,22 @@ export const HomeDemo: React.FC = () => {
     <Card border animationSlide="left" marginBottom={20}>
       <h4>Atomic Design</h4>
       <p>
-        The src folder contains all the source files that makes each{" "}
-        <span className="bold color--primary">React</span> application unique.
+        The folder structure of components follows the principles of Atomic
+        Design.
+      </p>
+      <p>Components are separated by their individual levels of complexity.</p>
+      <p>Simpler components are compounded into higher order components.</p>
+      <p>
+        "Atoms" are the simplest components that are then incorporated into
+        "molecules".
       </p>
       <p>
-        From a high level perspective the application is assembled by creating
-        components placed into folders categorized by their complexity
-        determined by Atomic Design principles.
+        "Molecules" are then utilized by "organisms" which are major DOM
+        elements of the application.
       </p>
       <p>
-        Navigation between web pages is facilitated by React Router. These are
-        separated out by the judgement of the developer (most likely based on
-        the needs of the project). These files are found in the pages folder.
-      </p>
-      <p>
-        The pages are then given url designations in React Router which is
-        located in the routes folder. PagesRoutes.tsx houses the actual pages
-        while AppRoute wraps around every major component so they have access to
-        URL navigation functionality.
-      </p>
-      <p>
-        AppRoute is then exported as a component to be wrapped by the Provider
-        from Redux.
-      </p>
-      <p>
-        App is then imported into main.tsx which the application has a root
-        created for it to be attached to a DOM element with the id of "root".
+        Finally "templates" are created from "molecules" which primarily serve
+        the purposes of creating individual pages and modals.
       </p>
     </Card>
   );
@@ -204,33 +197,71 @@ export const HomeDemo: React.FC = () => {
   const columnRightThree = (
     <Card border animationSlide="top" marginBottom={20}>
       <h4>State Management</h4>
+      <p>Primarily state management is handled by Redux via Redux Toolkit.</p>
       <p>
-        The src folder contains all the source files that makes each{" "}
-        <span className="bold color--primary">React</span> application unique.
+        This facilitates any data that needs to be shared and updated by
+        components that don't share a straight forward "parent-child"
+        relationship.
       </p>
       <p>
-        From a high level perspective the application is assembled by creating
-        components placed into folders categorized by their complexity
-        determined by Atomic Design principles.
+        The Provider is imported in App.tsx, supplied a store from the store
+        folder, and then wraps the entirety of the application.
       </p>
       <p>
-        Navigation between web pages is facilitated by React Router. These are
-        separated out by the judgement of the developer (most likely based on
-        the needs of the project). These files are found in the pages folder.
+        The store itself is a collection of reducers which are defined along
+        with actions in individual slices.
+      </p>
+    </Card>
+  );
+
+  const columnLeftFour = (
+    <Card border animationSlide="left" marginBottom={20}>
+      <h4>Card Layout</h4>
+      <p>Most elements in the application are wrapped in the Card component.</p>
+      <p>
+        This gives bounds to children elements and provides coherent guidelines
+        just by it's nature.
       </p>
       <p>
-        The pages are then given url designations in React Router which is
-        located in the routes folder. PagesRoutes.tsx houses the actual pages
-        while AppRoute wraps around every major component so they have access to
-        URL navigation functionality.
+        This leads to application where it's individual parts are organized and
+        it's information arranged in a aesthetically pleasant manner.
       </p>
       <p>
-        AppRoute is then exported as a component to be wrapped by the Provider
-        from Redux.
+        Cards also allow for an easy rearrangement of elements on smaller
+        screens for responsive layout.
+      </p>
+    </Card>
+  );
+
+  const columnRightFour = (
+    <Card border animationSlide="right" marginBottom={20}>
+      <h4>Styling</h4>
+      <p>
+        The boilerplate's styling is created in CSS which is handled by SaSS.
       </p>
       <p>
-        App is then imported into main.tsx which the application has a root
-        created for it to be attached to a DOM element with the id of "root".
+        Sass is a CSS preprocessor that extends functionality and capabilities
+        to CSS.
+      </p>
+      <p>
+        SaSS allows us to split the code required for styling the project into
+        multiple files.
+      </p>
+      <p>
+        Each folder contains an _index.scss that is forwards it's sibling files.
+        These files are then imported (@use) in the index file located in
+        "styles".
+      </p>
+      <p>
+        The "abstracts" folder is responsible for tools and helpers for SaSS
+        (mixins, variables, functions, etc.).
+      </p>
+      <p>
+        The "base" folder handles the foundational root styles of the project.
+      </p>
+      <p>
+        The "vendor" folder's function is to house third party styles; such as
+        "normalize" which comes installed on the boilerplate.
       </p>
     </Card>
   );
@@ -248,12 +279,19 @@ export const HomeDemo: React.FC = () => {
       <Column>{columnRightThree}</Column>
     </Row>
   );
+  const rowFour = (
+    <Row gutter={10} breakPoint="mobile">
+      <Column>{columnLeftFour}</Column>
+      <Column>{columnRightFour}</Column>
+    </Row>
+  );
 
   return (
     <>
       {rowOne}
       {rowTwo}
       {rowThree}
+      {rowFour}
     </>
   );
 };

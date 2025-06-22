@@ -32,8 +32,14 @@ div.card {
       @include animate-slide_top-vertical(50vh, $speed-050);
     }
 
-    &--fadein {
-      @include animate-fade-in($speed-050);
+    &--fade-in {
+      @include animate-fade-in($speed-075);
+    }
+    &--flip-in-right {
+      @include animate-flip-in-right($speed-050);
+    }
+    &--flip-in-left {
+      @include animate-flip-in-left($speed-050);
     }
   }
 

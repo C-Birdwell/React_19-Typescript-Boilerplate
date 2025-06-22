@@ -9,6 +9,9 @@ import type {
 export type CardProps = {
   border?: boolean;
   animationSlide?: "left" | "right" | "top" | "bottom" | "";
+  animationTriggerOnce?: boolean;
+  fadeIn?: boolean;
+  flipIn?: "left" | "right";
 } & PropChildren &
   PropsSpreadOperator &
   ClassNamesList &

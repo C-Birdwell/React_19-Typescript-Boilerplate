@@ -10,23 +10,26 @@ export const Card: FC<CardProps> = ({
   parentName,
   marginBottom = 20,
   animationSlide = "",
+  animationTriggerOnce = true,
+  fadeIn = false,
+  flipIn = "",
   ...rest
 }) => {
   const [ref, inView] = useInView({
-    triggerOnce: true,
-    rootMargin: "-100px 0px",
+    triggerOnce: animationTriggerOnce,
   });
 
-  let formatClassNames = classNames;
-  if (border) {
-    formatClassNames = [...formatClassNames, "border"];
-  }
-  if (animationSlide) {
-    if (inView) {
-      formatClassNames = [...formatClassNames, "in-view"];
-    }
-    formatClassNames = [...formatClassNames, `animation--${animationSlide}`];
-  }
+  const formatClassNames = [
+    ...classNames,
+    ...(border ? ["border"] : []),
+    ...(animationSlide
+      ? [...(inView ? ["in-view"] : []), `animation--${animationSlide}`]
+      : []),
+    ...(flipIn
+      ? [...(inView ? ["in-view"] : []), `animation--flip-in-${flipIn}`]
+      : []),
+    ...(fadeIn ? [...(inView ? ["in-view"] : []), `animation--fade-in`] : []),
+  ];
 
   const cardClassNames = setClassNames("card", parentName, formatClassNames);
   return (
