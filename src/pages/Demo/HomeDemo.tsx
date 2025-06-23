@@ -38,7 +38,7 @@ export const HomeDemo: React.FC = () => {
           Tailwind but can incorporate them if so desired.
         </p>
       </Card>
-      <Card border animationSlide="right" marginBottom={20}>
+      <Card border flipIn="right" marginBottom={20}>
         <h4>Architecture Philosophy</h4>
         <p>
           The intention of this application is to serve as boilerplate for
@@ -103,7 +103,7 @@ export const HomeDemo: React.FC = () => {
   );
 
   const columnLeftTwo = (
-    <Card border classNames={["gradient--background"]} animationSlide="top">
+    <Card border classNames={["gradient--background"]} flipIn="left">
       <h4>SRC Map:</h4>
       <blockquote>
         src
@@ -171,7 +171,7 @@ export const HomeDemo: React.FC = () => {
   );
 
   const columnLeftThree = (
-    <Card border animationSlide="left" marginBottom={20}>
+    <Card border flipIn="left" marginBottom={20}>
       <h4>Atomic Design</h4>
       <p>
         The folder structure of components follows the principles of Atomic
@@ -234,13 +234,13 @@ export const HomeDemo: React.FC = () => {
   );
 
   const columnRightFour = (
-    <Card border animationSlide="right" marginBottom={20}>
+    <Card border flipIn="right" marginBottom={20}>
       <h4>Styling</h4>
       <p>
         The boilerplate's styling is created in CSS which is handled by SaSS.
       </p>
       <p>
-        Sass is a CSS preprocessor that extends functionality and capabilities
+        SaSS is a CSS preprocessor that extends functionality and capabilities
         to CSS.
       </p>
       <p>
@@ -263,6 +263,7 @@ export const HomeDemo: React.FC = () => {
         The "vendor" folder's function is to house third party styles; such as
         "normalize" which comes installed on the boilerplate.
       </p>
+      <p>Folders "</p>
     </Card>
   );
 

@@ -14,6 +14,7 @@ export const ModalTemplate: React.FC<ModalTemplateProps> = ({
   customActions,
 }) => {
   const modalTemplateClassNames = [sizeType, backgroundTheme];
+
   return (
     <Card classNames={modalTemplateClassNames} parentName="modal">
       <div className="modal_card_header">

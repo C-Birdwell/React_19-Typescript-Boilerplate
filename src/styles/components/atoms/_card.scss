@@ -13,6 +13,7 @@ div.card {
   z-index: $z-card;
   max-width: 100%;
   min-height: fit-content;
+  overflow-y: auto;
   &--border {
     border: 2px solid var(--color-text-primary);
   }
