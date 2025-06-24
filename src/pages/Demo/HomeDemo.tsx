@@ -275,7 +275,6 @@ export const HomeDemo: React.FC = () => {
         The "vendor" folder's function is to house third party styles; such as
         "normalize" which comes installed on the boilerplate.
       </p>
-      <p>Folders "</p>
     </Card>
   );
 
