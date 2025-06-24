@@ -9,10 +9,16 @@ export const HomeDemo: React.FC = () => {
     hyperLinkCreator(
       "https://github.com/C-Birdwell/React_19-Typescript-Boilerplate"
     );
+
   const pagesLinkHandler = () =>
     hyperLinkCreator(
       "https:c-birdwell.github.io/React_19-Typescript-Boilerplate/"
     );
+
+  const reactLinkHandler = () => hyperLinkCreator("https://react.dev/");
+
+  const reduxLinkHandler = () =>
+    hyperLinkCreator("https://redux-toolkit.js.org/");
 
   const columnLeftOne = (
     <>
@@ -87,8 +93,14 @@ export const HomeDemo: React.FC = () => {
         marginBottom={20}
       />
       <Button
-        onClick={() => alert("Coming Soon!")}
-        buttonText="Creator's Portfolio Link"
+        onClick={() => reactLinkHandler()}
+        buttonText="React Link"
+        backgroundTheme="success"
+        marginBottom={20}
+      />
+      <Button
+        onClick={() => reduxLinkHandler()}
+        buttonText="Redux Toolkit Link"
         backgroundTheme="success"
         marginBottom={20}
       />
@@ -296,30 +308,3 @@ export const HomeDemo: React.FC = () => {
     </>
   );
 };
-{
-  /* <Card border>
-        <InputField
-          name="foo-input"
-          labelText="Foo"
-          type="text"
-          value={foo}
-          onUpdate={inputReduxHandlerFoo}
-        />
-        <InputField
-          name="bar-input"
-          labelText="Bar"
-          type="text"
-          value={bar}
-          onUpdate={inputReduxHandlerBar}
-        />
-        <InputField
-          name="bar-disabled"
-          labelText="Disabled Input"
-          type="text"
-          value={""}
-          disabled
-          placeholder="This input is disabled."
-          onUpdate={() => {}}
-        />
-      </Card> */
-}

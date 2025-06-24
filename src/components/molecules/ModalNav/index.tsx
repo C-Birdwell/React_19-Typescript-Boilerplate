@@ -64,9 +64,8 @@ export const ModalNav: React.FC<ModalNavProps> = ({
           </Column>
         )}
 
-        <Column size={3} classNames={["align-center"]}>
-          <Row>{renderCustomActions}</Row>
-        </Column>
+        {renderCustomActions}
+
         {modalIndexLength > 1 && (
           <Column classNames={["justify-center", "align-end"]}>
             {renderNextButton}

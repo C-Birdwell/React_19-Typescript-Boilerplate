@@ -1,5 +1,6 @@
 import { Row, PageTemplate, ModalDemoButton, Card, Column } from "@/components";
 import { useActionCreators } from "@/hooks";
+
 import {
   _modalSetBackgroundColor,
   _modalSetVisible,
@@ -27,14 +28,13 @@ export const ModalDemoPage: React.FC = () => {
     useActionCreators(actionCreators);
 
   const buttonModalLightHandler = () => {
-    _modalSetModalRoute("demo");
+    _modalSetModalRoute("light");
     _modalSetBackgroundColor(COLOR_LIGHT);
     _modalSetVisible(true);
   };
 
   const buttonModalDarkHandler = () => {
-    _modalSetModalRoute("demo");
-
+    _modalSetModalRoute("dark");
     _modalSetBackgroundColor(COLOR_DARK);
     _modalSetVisible(true);
   };
@@ -74,6 +74,7 @@ export const ModalDemoPage: React.FC = () => {
   };
 
   const parentClassName = "page--modal-demo";
+  const invisibleBox = <div style={{ height: "80px" }} />;
 
   return (
     <PageTemplate
@@ -84,7 +85,7 @@ export const ModalDemoPage: React.FC = () => {
         <Column>
           <Card border marginBottom={20} animationSlide="left">
             <h4 className="center">App Theme Examples</h4>
-
+            {invisibleBox}
             <Row parentName={parentClassName} breakPoint="mobile">
               <ModalDemoButton
                 buttonText="Primary Modal"
@@ -104,6 +105,7 @@ export const ModalDemoPage: React.FC = () => {
         <Column>
           <Card border marginBottom={20} animationSlide="right">
             <h4 className="center">Light & Dark Examples</h4>
+            {invisibleBox}
             <Row parentName={parentClassName} breakPoint="mobile">
               <ModalDemoButton
                 buttonText="Light Modal"
@@ -124,6 +126,7 @@ export const ModalDemoPage: React.FC = () => {
 
       <Card border animationSlide="bottom" marginBottom={20}>
         <h4 className="center">Examples of Status Themes</h4>
+        {invisibleBox}
         <Row parentName={parentClassName} breakPoint="mobile">
           <ModalDemoButton
             buttonText="Success Modal"
