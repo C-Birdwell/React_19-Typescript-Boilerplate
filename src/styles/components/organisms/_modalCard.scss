@@ -1,4 +1,5 @@
 @use "../../abstracts" as *;
+
 @mixin card_header($theme, $backgroundColor, $textColor) {
   &.card--#{$theme} {
     border-color: $textColor;
@@ -23,6 +24,15 @@ $card-sizes: "small" 400px 5% 400px, "medium" 1000px 10% 80%, "large" 95% 5% 90%
     max-width: $maxWidth;
     top: $top;
     height: $height;
+    @media only screen and (max-width: $breakpoint-mobile) {
+      & {
+        top: 20px;
+        height: calc(100vh - $height-modal-header);
+      }
+      &.card--custom-actions {
+        height: calc(100vh - $height-modal-offset);
+      }
+    }
   }
 }
 
@@ -51,6 +61,11 @@ div.modal_card {
       justify-content: center;
       align-items: center;
       height: 100%;
+      @media only screen and (max-width: $breakpoint-mobile) {
+        & {
+          font-size: 20px;
+        }
+      }
     }
     .button {
       position: absolute;
@@ -68,8 +83,13 @@ div.modal_card {
     box-sizing: border-box;
     border-top: solid 2px transparent;
     padding: $space-s $space-s 0 $space-s;
-    height: calc(100% - ($height-modal-header + 70px));
+    height: calc(100% - ($height-modal-header + $height-modal-nav));
     overflow-y: auto;
+    @media only screen and (max-width: $breakpoint-mobile) {
+      .card--custom-actions & {
+        height: calc(100% - ($height-modal-offset));
+      }
+    }
   }
   @each $name, $maxWidth, $top, $height in $card-sizes {
     @include set-card-sizes($name, $maxWidth, $top, $height);
@@ -79,7 +99,10 @@ div.modal_card {
   }
 
   &_nav {
-    height: 70px;
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    height: $height-modal-nav;
     box-sizing: border-box;
     padding: 0 $space-s;
     border-top: 2px solid var(--color-text-primary);
@@ -92,6 +115,31 @@ div.modal_card {
         transform: scale(102%);
       }
       @include animate-fade-in($speed-025);
+      @media only screen and (max-width: $breakpoint-mobile) {
+        & {
+          max-width: 150px;
+        }
+      }
+    }
+
+    &--custom-actions-mobile {
+      .column {
+        &:first-child {
+          align-items: flex-start;
+        }
+        &:last-child {
+          align-items: flex-end;
+        }
+      }
+    }
+    @media only screen and (max-width: $breakpoint-mobile) {
+      &.modal_card_nav--custom-actions {
+        min-height: $height-modal-nav * 2;
+      }
+    }
+
+    .column--custom-action {
+      align-items: center;
     }
   }
 }

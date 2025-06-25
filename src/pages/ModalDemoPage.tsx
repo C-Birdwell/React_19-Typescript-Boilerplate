@@ -92,6 +92,7 @@ export const ModalDemoPage: React.FC = () => {
                 onClick={buttonModalPrimaryHandler}
                 backgroundTheme="primary"
                 alignment="left"
+                marginBottom={20}
               />
               <ModalDemoButton
                 buttonText="Secondary Modal"
@@ -112,6 +113,7 @@ export const ModalDemoPage: React.FC = () => {
                 onClick={buttonModalLightHandler}
                 backgroundTheme="light"
                 alignment="left"
+                marginBottom={20}
               />
               <ModalDemoButton
                 buttonText="Dark Modal"
@@ -133,11 +135,13 @@ export const ModalDemoPage: React.FC = () => {
             onClick={buttonModalSuccessHandler}
             backgroundTheme="success"
             alignment="left"
+            marginBottom={20}
           />
           <ModalDemoButton
             buttonText="Caution Modal"
             onClick={buttonModalCautionHandler}
             backgroundTheme="caution"
+            marginBottom={20}
           />
           <ModalDemoButton
             buttonText="Danger Modal"

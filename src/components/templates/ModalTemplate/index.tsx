@@ -13,7 +13,17 @@ export const ModalTemplate: React.FC<ModalTemplateProps> = ({
   onDismiss,
   customActions,
 }) => {
-  const modalTemplateClassNames = [sizeType, backgroundTheme];
+  const customActionsClassName =
+    customActions !== undefined &&
+    customActions !== null &&
+    customActions.length > 0
+      ? "custom-actions"
+      : "";
+  const modalTemplateClassNames = [
+    sizeType,
+    backgroundTheme,
+    customActionsClassName,
+  ];
 
   return (
     <Card classNames={modalTemplateClassNames} parentName="modal">

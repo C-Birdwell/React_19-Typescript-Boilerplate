@@ -6,6 +6,7 @@ export const ModalDemoButton: React.FC<ModalDemoButtonProps> = ({
   onClick,
   backgroundTheme,
   alignment = "",
+  marginBottom = 0,
 }) => {
   let alignmentClass = "";
 
@@ -26,6 +27,7 @@ export const ModalDemoButton: React.FC<ModalDemoButtonProps> = ({
         buttonText={buttonText}
         onClick={onClick}
         backgroundTheme={backgroundTheme}
+        marginBottom={marginBottom}
       />
     </Column>
   );

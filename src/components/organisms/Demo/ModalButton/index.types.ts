@@ -1,7 +1,8 @@
-import type { BackgroundTheme } from "@/lib";
+import type { BackgroundTheme, MarginBottom } from "@/lib";
 
 export type ModalDemoButtonProps = {
   buttonText: string;
   alignment?: "left" | "right" | "";
   onClick: () => void;
-} & BackgroundTheme;
+} & BackgroundTheme &
+  MarginBottom;
