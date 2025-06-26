@@ -1,4 +1,5 @@
 import { useState, type FC } from "react";
+import { useNavigate } from "react-router";
 
 import { Backdrop, ModalTemplate } from "@/components";
 import { useStoreSelector, useActionCreators } from "@/hooks";
@@ -16,6 +17,7 @@ export const Modal: FC = () => {
   const { _modalReset } = useActionCreators(actionCreators);
 
   const [modalIndex, setModalIndex] = useState(0);
+  const navigate = useNavigate();
 
   if (!visible) {
     return <></>;
@@ -34,8 +36,10 @@ export const Modal: FC = () => {
     setModalIndex((modalIndex) => modalIndex + 1);
   };
 
-  const { title, slide, customActions } = modalRoutes(modalRoute)[modalIndex];
-  const modalIndexLength = modalRoutes(modalRoute).length;
+  const renderModalContent = modalRoutes(modalRoute, navigate, onDismiss);
+
+  const { title, slide, customActions } = renderModalContent[modalIndex];
+  const modalIndexLength = renderModalContent.length;
   return (
     <div className="modal">
       <Backdrop backgroundTheme={backgroundTheme} onDismiss={onDismiss} />

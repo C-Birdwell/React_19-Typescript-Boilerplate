@@ -122,7 +122,7 @@ div.modal_card {
       }
     }
 
-    &--custom-actions-mobile {
+    &_row--custom-actions-mobile {
       .column {
         &:first-child {
           align-items: flex-start;
@@ -135,6 +135,12 @@ div.modal_card {
     @media only screen and (max-width: $breakpoint-mobile) {
       &.modal_card_nav--custom-actions {
         min-height: $height-modal-nav * 2;
+        &-1 {
+          min-height: $height-modal-nav;
+          div.modal_card_nav_row--custom-actions-mobile .column:last-child {
+            align-items: center;
+          }
+        }
       }
     }
 

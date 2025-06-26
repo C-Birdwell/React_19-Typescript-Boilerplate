@@ -71,26 +71,28 @@ export const ModalNav: React.FC<ModalNavProps> = ({
       {BREAKPOINT_PHONE > width &&
         customActions !== null &&
         customActions.length && (
-          <Row className="modal_card_nav--custom-actions-mobile">
+          <Row className="modal_card_nav_row--custom-actions-mobile">
             {renderCustomActions}
           </Row>
         )}
-      <Row>
-        {modalIndexLength > 1 && (
-          <Column classNames={["justify-center", "align-start"]}>
-            {renderBackButton}
-          </Column>
-        )}
+      {modalIndexLength !== 1 && (
+        <Row className="modal_card_nav_row--actions">
+          {modalIndexLength > 1 && (
+            <Column classNames={["justify-center", "align-start"]}>
+              {renderBackButton}
+            </Column>
+          )}
 
-        {BREAKPOINT_PHONE < width && renderCustomActions}
+          {BREAKPOINT_PHONE < width && renderCustomActions}
 
-        {modalIndexLength > 1 && (
-          <Column classNames={["justify-center", "align-end"]}>
-            {renderNextButton}
-            {renderDismissButton()}
-          </Column>
-        )}
-      </Row>
+          {modalIndexLength > 1 && (
+            <Column classNames={["justify-center", "align-end"]}>
+              {renderNextButton}
+              {renderDismissButton()}
+            </Column>
+          )}
+        </Row>
+      )}
     </div>
   );
 };

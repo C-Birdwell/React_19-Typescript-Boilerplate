@@ -1,3 +1,5 @@
+import { useNavigate } from "react-router";
+
 import {
   DemoSlideA,
   DemoSlideB,
@@ -11,6 +13,7 @@ import {
 } from "@/components";
 import type { ModalRoute, ActionType } from "@/lib";
 import { setAppTheme } from "@/utils";
+import { URL_HOME } from "@/constants";
 
 const setTheme = (text: string, theme: "light" | "dark") => ({
   text,
@@ -22,7 +25,11 @@ const setTheme = (text: string, theme: "light" | "dark") => ({
 const darkButton = setTheme("Dark Theme", "dark");
 const lightButton = setTheme("Light Theme", "light");
 
-export const modalRoutes = (selection: string): ModalRoute[] => {
+export const modalRoutes = (
+  selection: string,
+  navigate: ReturnType<typeof useNavigate>,
+  onDismiss: () => void | null
+): ModalRoute[] => {
   const createSlide = (
     title: string,
     slide: React.ReactElement,
@@ -68,10 +75,16 @@ export const modalRoutes = (selection: string): ModalRoute[] => {
     ]),
   ];
 
+  const successHandler = () => {
+    navigate(URL_HOME);
+    window.scrollTo(0, 0);
+    onDismiss();
+  };
+
   const customActionSuccess: ActionType[] = [
     {
       text: "Submit",
-      action: () => alert("hello"),
+      action: successHandler,
       id: "demo-success-action",
       backgroundTheme: "success",
     },
