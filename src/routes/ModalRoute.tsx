@@ -27,7 +27,7 @@ const darkButton = setTheme("Dark Theme", "dark");
 const lightButton = setTheme("Light Theme", "light");
 
 export const modalRoutes = (
-  selection: "demo" | "light" | "dark" | "success" | "redux",
+  selection: "demo" | "light" | "dark" | "success" | "redux" | "",
   navigate: ReturnType<typeof useNavigate>,
   onDismiss: () => void | null
 ): ModalRoute[] => {
