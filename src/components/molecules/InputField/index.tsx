@@ -10,6 +10,7 @@ export const InputField: React.FC<InputFieldProps> = ({
   labelText,
   onUpdate,
   placeholder,
+  dataMask,
 }) => {
   return (
     <div
@@ -25,6 +26,7 @@ export const InputField: React.FC<InputFieldProps> = ({
         onUpdate={onUpdate}
         disabled={disabled}
         placeholder={placeholder}
+        dataMask={dataMask}
       />
     </div>
   );

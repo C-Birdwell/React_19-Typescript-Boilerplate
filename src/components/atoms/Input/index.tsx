@@ -1,3 +1,6 @@
+import { useRef } from "react";
+import { useMask } from "@react-input/mask";
+
 import type { InputProps } from "./index.types";
 
 export const Input: React.FC<InputProps> = ({
@@ -7,8 +10,17 @@ export const Input: React.FC<InputProps> = ({
   value,
   onUpdate,
   placeholder,
+  dataMask = null,
   ...rest
 }) => {
+  const initRef = useRef(null);
+
+  const maskRef = useMask({
+    mask: dataMask?.mask,
+    replacement: dataMask?.replacement,
+  });
+  const inputRef = dataMask !== null ? maskRef : initRef;
+
   return (
     <input
       value={value}
@@ -18,6 +30,7 @@ export const Input: React.FC<InputProps> = ({
       name={name}
       id={name}
       placeholder={placeholder}
+      ref={inputRef}
       {...rest}
     />
   );

@@ -1,5 +1,4 @@
-// export type EventTargetValue = {
-//   target: {
-//     value: string | boolean | number;
-//   };
-// };
+export type DataMaskConfig = {
+  mask: string;
+  replacement: { [key: string]: RegExp };
+};

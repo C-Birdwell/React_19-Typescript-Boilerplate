@@ -11,7 +11,7 @@ export const Navbar: React.FC<NavbarProps> = ({
     return (
       <Column
         key={`${parentName}-${targetText}`}
-        classNames={["align-center", "justify-center"]}
+        classNames={["align-end", "justify-center"]}
       >
         <NavLink
           target={target}

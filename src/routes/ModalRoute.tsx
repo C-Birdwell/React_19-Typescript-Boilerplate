@@ -10,6 +10,7 @@ import {
   DemoSlideDarkA,
   DemoSlideDarkB,
   DemoSlideSuccess,
+  ModalSlideReduxSummary,
 } from "@/components";
 import type { ModalRoute, ActionType } from "@/lib";
 import { setAppTheme } from "@/utils";
@@ -26,7 +27,7 @@ const darkButton = setTheme("Dark Theme", "dark");
 const lightButton = setTheme("Light Theme", "light");
 
 export const modalRoutes = (
-  selection: string,
+  selection: "demo" | "light" | "dark" | "success" | "redux",
   navigate: ReturnType<typeof useNavigate>,
   onDismiss: () => void | null
 ): ModalRoute[] => {
@@ -75,6 +76,15 @@ export const modalRoutes = (
     ]),
   ];
 
+  const slidesDemoRedux = [
+    createSlide(
+      "Values of Inputs from Redux Examples",
+      <ModalSlideReduxSummary />,
+      "demo-r-a",
+      null
+    ),
+  ];
+
   const successHandler = () => {
     navigate(URL_HOME);
     window.scrollTo(0, 0);
@@ -111,6 +121,9 @@ export const modalRoutes = (
 
     case "success":
       return slidesArraySuccess;
+
+    case "redux":
+      return slidesDemoRedux;
 
     default:
       return [

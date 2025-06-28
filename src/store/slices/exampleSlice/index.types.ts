@@ -1,1 +1,8 @@
-export type InitialState = { foo: string; bar: string };
+export type InitialState = {
+  firstWord: string;
+  secondWord: string;
+  firstNumber: number;
+  secondNumber: number;
+  phoneNumber: string;
+  phoneClean: string;
+};

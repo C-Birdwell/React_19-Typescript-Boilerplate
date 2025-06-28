@@ -1,3 +1,5 @@
+export * from "./ModalSlideReduxSummary";
+
 export const DemoSlideA: React.FC = () => {
   return (
     <>

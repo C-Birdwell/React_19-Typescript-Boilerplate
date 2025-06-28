@@ -5,24 +5,47 @@ import { EXAMPLE } from "@/constants";
 import type { InitialState } from "./index.types";
 
 const initialState: InitialState = {
-  foo: "example",
-  bar: "tecpatl",
+  firstWord: "Foo",
+  secondWord: "Bar",
+  firstNumber: 0,
+  secondNumber: 0,
+  phoneNumber: "",
+  phoneClean: "",
 };
 
 const exampleSlice = createSlice({
   name: EXAMPLE,
   initialState,
   reducers: {
-    _exampleSetFoo: (state, action) => {
+    _exampleSetFirstWord: (state, action) => {
       const { payload } = action;
-      state.foo = payload;
+      state.firstWord = payload;
     },
-    _exampleSetBar: (state, action) => {
+    _exampleSetSecondWord: (state, action) => {
       const { payload } = action;
-      state.bar = payload;
+      state.secondWord = payload;
+    },
+    _exampleSetFirstNumber: (state, action) => {
+      const { payload } = action;
+      state.firstNumber = parseInt(payload);
+    },
+    _exampleSetSecondNumber: (state, action) => {
+      const { payload } = action;
+      state.secondNumber = parseInt(payload);
+    },
+    _exampleSetPhoneNumber: (state, action) => {
+      const { payload } = action;
+      state.phoneNumber = payload;
+      state.phoneClean = payload.replace(/\D/g, ""); // Clean non-digit characters
     },
   },
 });
 
-export const { _exampleSetFoo, _exampleSetBar } = exampleSlice.actions;
+export const {
+  _exampleSetFirstWord,
+  _exampleSetSecondWord,
+  _exampleSetFirstNumber,
+  _exampleSetSecondNumber,
+  _exampleSetPhoneNumber,
+} = exampleSlice.actions;
 export const exampleReducer = exampleSlice.reducer;
