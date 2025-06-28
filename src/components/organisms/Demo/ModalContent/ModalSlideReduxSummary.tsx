@@ -14,7 +14,7 @@ export const ModalSlideReduxSummary: React.FC = () => {
   return (
     <div className="modal_slide--redux-summary">
       <h4>Summary of Inputs</h4>
-      <Row>
+      <Row breakPoint="mobile">
         <Column>
           <p>
             First Word: <span className="bold">{firstWord}</span>
@@ -26,7 +26,7 @@ export const ModalSlideReduxSummary: React.FC = () => {
           </p>
         </Column>
       </Row>
-      <Row>
+      <Row breakPoint="mobile">
         <Column>
           <p>
             First Number: <span className="bold">{firstNumber}</span>
@@ -38,7 +38,7 @@ export const ModalSlideReduxSummary: React.FC = () => {
           </p>
         </Column>
       </Row>
-      <Row>
+      <Row breakPoint="mobile">
         <Column>
           <p>
             Phone Number: <span className="bold">{phoneNumber}</span>

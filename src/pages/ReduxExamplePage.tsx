@@ -87,7 +87,7 @@ export const ReduxExamplePage: React.FC = () => {
         <h4>
           {firstWord} {secondWord}
         </h4>
-        <Row gutter={20}>
+        <Row gutter={20} breakPoint="tablet">
           <Column>
             <InputField
               name="foo-input"
@@ -95,6 +95,7 @@ export const ReduxExamplePage: React.FC = () => {
               type="text"
               value={firstWord}
               onUpdate={inputReduxHandlerFoo}
+              marginBottom={20}
             />
           </Column>
           <Column>
@@ -115,7 +116,7 @@ export const ReduxExamplePage: React.FC = () => {
         <h4>
           {firstNumber} - {secondNumber} = {firstNumber - secondNumber}
         </h4>
-        <Row gutter={20}>
+        <Row gutter={20} breakPoint="tablet">
           <Column>
             <InputField
               name="num1-input"
@@ -123,6 +124,7 @@ export const ReduxExamplePage: React.FC = () => {
               type="number"
               value={firstNumber}
               onUpdate={inputReduxHandlerFirstNumber}
+              marginBottom={20}
             />
           </Column>
           <Column>
@@ -141,7 +143,7 @@ export const ReduxExamplePage: React.FC = () => {
           Phone Number:{" "}
           {phoneNumber ? `${phoneNumber} or ${phoneClean}` : phoneMask}
         </h4>
-        <Row gutter={20}>
+        <Row gutter={20} breakPoint="tablet">
           <Column>
             <InputField
               name="phone-input"
@@ -156,7 +158,7 @@ export const ReduxExamplePage: React.FC = () => {
           <Column></Column>
         </Row>
       </Card>
-      <Card border>
+      <Card border breakPoint="tablet">
         <Button
           backgroundTheme="success"
           buttonText="Review Inputs"

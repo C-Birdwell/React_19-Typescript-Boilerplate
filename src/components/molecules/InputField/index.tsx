@@ -11,12 +11,14 @@ export const InputField: React.FC<InputFieldProps> = ({
   onUpdate,
   placeholder,
   dataMask,
+  marginBottom = "0",
 }) => {
   return (
     <div
       className={convertVariantClassNames("input-field", [
         disabledClassName(disabled),
       ])}
+      style={{ marginBottom: marginBottom }}
     >
       <Label name={name} labelText={labelText} />
       <Input
