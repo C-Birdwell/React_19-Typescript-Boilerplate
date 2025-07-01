@@ -8,7 +8,7 @@ export const ModalSlideReduxSummary: React.FC = () => {
     firstNumber,
     secondNumber,
     phoneNumber,
-    phoneClean,
+    phoneValue,
   } = useStoreSelector((state: RootState) => state.example);
 
   return (
@@ -46,7 +46,7 @@ export const ModalSlideReduxSummary: React.FC = () => {
         </Column>
         <Column>
           <p>
-            Phone Value: <span className="bold">{phoneClean}</span>
+            Phone Value: <span className="bold">{phoneValue}</span>
           </p>
         </Column>
       </Row>

@@ -32,6 +32,17 @@ const actionCreators = {
   _modalSetVisible,
 };
 
+const errorRulesPhone = [
+  {
+    rule: /^\d{0,9}$/,
+    message: "Phone number must be 10 digits.",
+  },
+  {
+    rule: /^555/,
+    message: "555 is a fake area code and you know it.",
+  },
+];
+
 export const ReduxExamplePage: React.FC = () => {
   const {
     firstWord,
@@ -39,7 +50,7 @@ export const ReduxExamplePage: React.FC = () => {
     firstNumber,
     secondNumber,
     phoneNumber,
-    phoneClean,
+    phoneValue,
   } = useStoreSelector((state: RootState) => state.example);
 
   const {
@@ -141,7 +152,7 @@ export const ReduxExamplePage: React.FC = () => {
       <Card border animationSlide="bottom">
         <h4>
           Phone Number:{" "}
-          {phoneNumber ? `${phoneNumber} or ${phoneClean}` : phoneMask}
+          {phoneNumber ? `${phoneNumber} or ${phoneValue}` : phoneMask}
         </h4>
         <Row gutter={20} breakPoint="tablet">
           <Column>
@@ -150,12 +161,23 @@ export const ReduxExamplePage: React.FC = () => {
               labelText="Phone Number Example"
               type="text"
               value={phoneNumber}
+              ruleValue={phoneValue}
               onUpdate={inputReduxHandlerPhoneNumber}
               dataMask={phoneMaskConfig}
               placeholder={phoneMask}
+              errorRules={errorRulesPhone}
+              marginBottom={20}
             />
           </Column>
-          <Column></Column>
+          <Column>
+            <p>
+              The phone input (type text) has a dataMask applied to it. This
+              limits the valid entries to numbers and formats the string into a{" "}
+              {phoneMask} pattern. The phone input also has error handling for
+              values less than 10 in length and/or if the first three numbers
+              are 555.
+            </p>
+          </Column>
         </Row>
       </Card>
       <Card border breakPoint="tablet">

@@ -4,5 +4,5 @@ export type InitialState = {
   firstNumber: number;
   secondNumber: number;
   phoneNumber: string;
-  phoneClean: string;
+  phoneValue: string;
 };

@@ -11,6 +11,7 @@ export const Input: React.FC<InputProps> = ({
   onUpdate,
   placeholder,
   dataMask = null,
+  error = false,
   ...rest
 }) => {
   const initRef = useRef(null);
@@ -31,6 +32,7 @@ export const Input: React.FC<InputProps> = ({
       id={name}
       placeholder={placeholder}
       ref={inputRef}
+      aria-invalid={!!error}
       {...rest}
     />
   );

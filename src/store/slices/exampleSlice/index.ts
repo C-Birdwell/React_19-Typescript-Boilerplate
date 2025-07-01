@@ -10,7 +10,7 @@ const initialState: InitialState = {
   firstNumber: 0,
   secondNumber: 0,
   phoneNumber: "",
-  phoneClean: "",
+  phoneValue: "",
 };
 
 const exampleSlice = createSlice({
@@ -36,7 +36,7 @@ const exampleSlice = createSlice({
     _exampleSetPhoneNumber: (state, action) => {
       const { payload } = action;
       state.phoneNumber = payload;
-      state.phoneClean = payload.replace(/\D/g, ""); // Clean non-digit characters
+      state.phoneValue = payload.replace(/\D/g, ""); // Clean non-digit characters
     },
   },
 });

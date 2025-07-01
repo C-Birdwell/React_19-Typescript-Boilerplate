@@ -1,10 +1,21 @@
 @use "../../abstracts" as *;
 
-div.input-field {
+.input-field {
   display: flex;
   flex: 1;
   flex-direction: column;
   label {
     margin-bottom: $space-xs;
+  }
+  &--error {
+    input {
+      outline-color: $color-danger;
+    }
+    label {
+      color: $color-danger;
+    }
+  }
+  &_error-message {
+    color: $color-danger;
   }
 }

@@ -3,6 +3,7 @@
 input {
   padding: $space-s 0 $space-s $space-xs;
   background-color: var(--color-background-primary);
+
   &:focus {
     outline-color: var(--color-secondary);
   }

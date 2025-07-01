@@ -7,7 +7,9 @@ export type InputProps = {
   disabled?: boolean;
   type: string;
   value: string | number | "" | undefined;
+  ruleValue?: string | number | "" | undefined;
   placeholder?: string;
   dataMask?: DataMaskConfig;
   onUpdate: (e: ChangeEvent<HTMLInputElement>) => void;
+  error?: boolean;
 } & PropsSpreadOperator;
