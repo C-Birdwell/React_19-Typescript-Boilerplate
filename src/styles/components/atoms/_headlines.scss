@@ -16,26 +16,26 @@ h6 {
 h2 {
   font-size: 45px;
   @media only screen and (max-width: $breakpoint-mobile) {
-    & {
-      font-size: 36px;
-    }
+    font-size: 36px;
   }
 }
 
 h3 {
   font-size: 30px;
   @media only screen and (max-width: $breakpoint-mobile) {
-    & {
-      font-size: 22px;
-    }
+    font-size: 22px;
   }
 }
 
 h4 {
   font-size: 25px;
   @media only screen and (max-width: $breakpoint-mobile) {
-    & {
-      font-size: 18px;
-    }
+    font-size: 18px;
+  }
+}
+h5 {
+  font-size: 20px;
+  @media only screen and (max-width: $breakpoint-mobile) {
+    font-size: 16px;
   }
 }
