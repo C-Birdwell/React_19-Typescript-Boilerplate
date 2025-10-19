@@ -70,7 +70,7 @@ To add more please follow the pattern found on:
       "@/routes": ["./src/routes"],
       "@/store": ["./src/store"],
       "@/styles": ["./src/styles"],
-      "@utils": ["./src/utils"]
+      "@/utils": ["./src/utils"]
     }
 ````
 
@@ -88,7 +88,7 @@ alias: {
       "@routes": path.resolve(__dirname, "./src/routes"),
       "@store": path.resolve(__dirname, "./src/store"),
       "@styles": path.resolve(__dirname, "./src/store"),
-      "@utils": path.resolve(__dirname, "./src/utils"),
+      "@/utils": path.resolve(__dirname, "./src/utils"),
     },
 ```
 

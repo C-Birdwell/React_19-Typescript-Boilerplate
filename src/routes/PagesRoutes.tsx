@@ -14,7 +14,9 @@ import {
   URL_CARDS,
   mainCLS,
   URL_REDUX,
+  URL_PLAYGROUND,
 } from "@/constants";
+import { PlaygroundPage } from "@/pages/PlaygroundPage";
 
 export const PagesRoutes: React.FC = () => {
   return (
@@ -24,7 +26,7 @@ export const PagesRoutes: React.FC = () => {
         <Route path={URL_CARDS} element={<CardsPage />} />
         <Route path={URL_MODALS} element={<ModalDemoPage />} />
         <Route path={URL_REDUX} element={<ReduxExamplePage />} />
-
+        <Route path={URL_PLAYGROUND} element={<PlaygroundPage />} />
         <Route path={URL_NOT_FOUND} element={<NotFoundPage />} />
       </Routes>
     </main>

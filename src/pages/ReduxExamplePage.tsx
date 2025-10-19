@@ -180,7 +180,7 @@ export const ReduxExamplePage: React.FC = () => {
           </Column>
         </Row>
       </Card>
-      <Card border breakPoint="tablet">
+      <Card border>
         <Button
           backgroundTheme="success"
           buttonText="Review Inputs"

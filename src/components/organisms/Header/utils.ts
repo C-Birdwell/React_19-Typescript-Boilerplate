@@ -4,10 +4,12 @@ import {
   TITLE_CARDS,
   TITLE_HOME,
   TITLE_MODALS,
+  TITLE_PLAYGROUND,
   TITLE_REDUX,
   URL_CARDS,
   URL_HOME,
   URL_MODALS,
+  URL_PLAYGROUND,
   URL_REDUX,
 } from "@/constants";
 
@@ -27,10 +29,12 @@ const homeLink = createLinkItem(URL_HOME, TITLE_HOME);
 const modalLink = createLinkItem(URL_MODALS, TITLE_MODALS);
 const cardsLink = createLinkItem(URL_CARDS, TITLE_CARDS);
 const reduxLink = createLinkItem(URL_REDUX, TITLE_REDUX);
+const playgroundLink = createLinkItem(URL_PLAYGROUND, TITLE_PLAYGROUND);
 
 export const linksArray: NavLinkProps[] = [
   homeLink,
   cardsLink,
   modalLink,
   reduxLink,
+  playgroundLink,
 ];

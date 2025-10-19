@@ -1,34 +1,31 @@
-import { _interfaceSetWindowDimensions } from "@/store";
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 import { useDispatch } from "react-redux";
+import { _interfaceSetWindowDimensions } from "@/store";
 
 export const useWindowDimensions = () => {
   const dispatch = useDispatch();
 
-  // Initialize with current dimensions
-  const [windowDimensions, setWindowDimensions] = useState({
-    width: window.innerWidth,
-    height: window.innerHeight,
-  });
-
   useEffect(() => {
-    dispatch(_interfaceSetWindowDimensions(windowDimensions));
+    // Initial dispatch on mount
+    const initialDimensions = {
+      width: window.innerWidth,
+      height: window.innerHeight,
+    };
+    dispatch(_interfaceSetWindowDimensions(initialDimensions));
 
     const windowResize = () => {
       const newDimensions = {
         width: window.innerWidth,
         height: window.innerHeight,
       };
-      setWindowDimensions(newDimensions);
       dispatch(_interfaceSetWindowDimensions(newDimensions));
     };
 
     window.addEventListener("resize", windowResize);
 
+    // Only run on mount/unmount
     return () => {
       window.removeEventListener("resize", windowResize);
     };
-  }, [dispatch, windowDimensions]);
-
-  return windowDimensions;
+  }, [dispatch]);
 };
